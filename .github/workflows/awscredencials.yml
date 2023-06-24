@@ -1,4 +1,4 @@
-name: credenciando a AWS 
+name: Credenciando a AWS 
 
 on: workflow_dispatch
 
