@@ -71,8 +71,8 @@ jobs:
     needs: testRunner
     name: Build for WebGL 🖥️
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
+    # strategy:
+    #   fail-fast: false
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -115,8 +115,8 @@ jobs:
     needs: testRunner
     name: Build for Windows 🖥️
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
+    # strategy:
+    #   fail-fast: false
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -159,8 +159,8 @@ jobs:
     needs: testRunner
     name: Build for Android 📱
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
+    # strategy:
+    #   fail-fast: false
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
