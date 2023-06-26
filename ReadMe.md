@@ -26,20 +26,19 @@
  - git add and commit and push
 
 
-### Generate License
+### Crie uma Licença
  - [DOCUMENTATION](https://game.ci/docs/github/activation)
- - Create your actions workflow: `.github/workflows/activation.yml` using the above docs.
- - git add and commit and push
+ - Coloque para rodar o workflow activation: `.github/workflows/activation.yml` ver o documento acima.
  - Check that your workflow passed.
  - Download `Manual Activation File` artifact.
  - Extract zip.
- - Upload the file to [license generate](https://license.unity3d.com/manual)
+ - Faça o upload do arquivo para: [license generate](https://license.unity3d.com/manual)
  - Download `Unity_*.ulf` file
 
 
-### Update CI Variables
+### faça um update da variável 
 
- - Add a secret variable to your repo.
+ - Adicione uma variável secreta para seu repositório.
    - `UNITY_LICENSE` - The content of the file you just downloaded
 
 
