@@ -1,4 +1,4 @@
-# OBS: estamos realizando um teste administrando o fluxo de arte dentro da unity com esse repositório para que ele seja usado como referência para os próximos 
+# OBS: [30/06/2023] estamos realizando um teste administrando o fluxo de arte dentro da unity com esse repositório para que ele seja usado como referência para os próximos 
 
 ![Workflow demo](https://user-images.githubusercontent.com/1744957/125079869-022e6300-e0bc-11eb-85f0-291a08a65507.png)
 
