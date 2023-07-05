@@ -127,7 +127,8 @@ namespace Fusion.Editor {
   using UnityEditor;
   using UnityEngine;
 
-  public class NetworkPrefabAssetFactoryResource : INetworkPrefabSourceFactory, INetworkPrefabSourceFactoryCustomEditorResolve {
+  public class NetworkPrefabAssetFactoryResource: INetworkPrefabSourceFactory, INetworkPrefabSourceFactoryCustomEditorResolve {
+
     public const int DefaultOrder = 1000;
 
     Type INetworkPrefabSourceFactory.SourceType => typeof(NetworkPrefabSourceUnityResource);
@@ -135,19 +136,13 @@ namespace Fusion.Editor {
     int INetworkPrefabSourceFactory.Order => DefaultOrder;
 
     NetworkPrefabSourceUnityBase INetworkPrefabSourceFactory.TryCreate(string assetPath) {
-      var normalizedPath = PathUtils.MakeSane(assetPath);
-
-      const string ResourcesPart = "/Resources/";
-
-      var resourcesIndex = normalizedPath.IndexOf(ResourcesPart, StringComparison.Ordinal);
-      if (resourcesIndex < 0) {
+      if (PathUtils.MakeRelativeToFolder(assetPath, "Resources", out var resourcesPath)) {
+        var result = ScriptableObject.CreateInstance<NetworkPrefabSourceUnityResource>();
+        result.ResourcePath = PathUtils.GetPathWithoutExtension(resourcesPath);
+        return result;
+      } else {
         return null;
       }
-
-      var resourcePath = normalizedPath.Substring(resourcesIndex + ResourcesPart.Length);
-      var result       = ScriptableObject.CreateInstance<NetworkPrefabSourceUnityResource>();
-      result.ResourcePath = PathUtils.GetPathWithoutExtension(resourcePath);
-      return result;
     }
 
     GameObject INetworkPrefabSourceFactoryCustomEditorResolve.EditorResolveSource(NetworkPrefabSourceUnityBase prefabAsset) {
@@ -156,6 +151,7 @@ namespace Fusion.Editor {
     }
   }
 }
+
 
 #endregion
 
@@ -4524,16 +4520,196 @@ namespace Fusion.Editor {
 namespace Fusion.Editor {
 
   using UnityEditor;
-
+  using UnityEngine;
+  using System.Collections.Generic;
+  using System;
+  using System.Text;
+  
   [CustomPropertyDrawer(typeof(VersaMaskAttribute))]
-  public class VersaMaskAttributeDrawer : VersaMaskDrawer {
-    protected override bool FirstIsZero {
-      get {
-        var attr = attribute as VersaMaskAttribute;
-        return attr != null && attr.DefinesZero;
+  public class VersaMaskAttributeDrawer : PropertyDrawer {
+
+    // persistent cache of XML summaries and values
+    private static Dictionary<Type, (string[] names, string[] summaries, int[] values)> _typeInfo;
+    private static StringBuilder _sb;
+    
+    private const float PAD           = 4;
+    private const float LINE_SPACING  = 18;
+    private const float BOX_INDENT    = 0; //16 - PAD;
+    private const float FOLDOUT_WIDTH = 16;
+    
+    protected virtual (string[] names, string[] summaries, int[] values) GetStringNames() {
+
+      var maskAttribute = attribute as VersaMaskAttribute;
+
+      var fieldType = (maskAttribute.CastTo == null) ? fieldInfo.FieldType : maskAttribute.CastTo;
+      
+      if (_typeInfo == null) {
+        _typeInfo = new Dictionary<Type, (string[], string[], int[])>();
       }
+      if (_typeInfo.TryGetValue(fieldType, out var entry)) {
+        return entry;
+      }
+
+      int[] enumValues = (int[])fieldType.GetEnumValues();
+      string[] names = new string[enumValues.Length];
+      
+      for (int i = 0; i < enumValues.Length; ++i) {
+         names[i] = Enum.GetName(fieldType, enumValues[i]);
+      }
+      
+      // Remove Zero value from the array if need be.
+      int len = enumValues.Length;
+      entry = (new string[len], new string[len], new int[len]);
+
+      for (int i = 0; i < len; i++) {
+        var name  = names[i];
+        entry.names[i]  = ObjectNames.NicifyVariableName(name);
+        entry.values[i] = enumValues[i];
+        var enumField   = fieldType.GetField(name);
+        entry.summaries[i] = XmlDocumentation.GetXmlDocSummary(enumField, true);
+      }
+      _typeInfo.Add(fieldType, entry);
+      return entry;
     }
 
+
+    
+    public override void OnGUI(Rect r, SerializedProperty property, GUIContent label) {
+
+      var attr = attribute as VersaMaskAttribute;
+
+      bool useFoldout = !attr.AlwaysExpanded && !string.IsNullOrEmpty(label.text);
+
+      if (useFoldout) {
+        bool wasEnabled = GUI.enabled;
+        GUI.enabled = true;
+        property.isExpanded = EditorGUI.Toggle(new Rect(r) { xMin = r.xMin + EditorGUIUtility.labelWidth, height = LINE_SPACING, width = FOLDOUT_WIDTH }, property.isExpanded, (GUIStyle)"Foldout");
+        GUI.enabled = wasEnabled;
+      }
+
+      label = EditorGUI.BeginProperty(r, label, property);
+
+      int scratchMask;
+      
+      Rect br = new Rect(r) { xMin = r.xMin + BOX_INDENT };
+      Rect ir = new Rect(br) { height = LINE_SPACING };
+
+      Rect labelRect = new Rect(r) { height = LINE_SPACING };
+
+      var entries = GetStringNames();
+
+      if (attr.AlwaysExpanded || (useFoldout && property.isExpanded)) {
+        scratchMask = property.intValue;
+
+        EditorGUI.LabelField(new Rect(br) { yMin = br.yMin + LINE_SPACING }, "", EditorStyles.helpBox);
+        ir.xMin += PAD * 2;
+        ir.y += PAD;
+
+        var ShowMaskBits = attr.ShowBitmask;
+
+        var names = entries.names;
+        int len   = names.Length;
+        for (int i = 0; i < len; ++i) {
+          ir.y += LINE_SPACING;
+
+          int offsetBit = entries.values[i];
+
+          // Invisible button. Toggle is cosmetic, the button does the actual toggling.
+          if (GUI.Button(ir, "", GUIStyle.none)) {
+            if (offsetBit == 0) {
+              if (scratchMask == 0) {
+                scratchMask = -1;
+              } else {
+                scratchMask = 0;
+              }
+            } else {
+              bool isSelected = (scratchMask & offsetBit) == offsetBit;
+              if (isSelected) {
+                scratchMask &= ~offsetBit;
+              } else {
+                scratchMask |= offsetBit;
+              }              
+            }
+          }
+
+          // Cosmetic Toggle
+          if (offsetBit != 0) {
+            EditorGUI.ToggleLeft(ir, "", (scratchMask & offsetBit) == offsetBit);
+          } else {
+            EditorGUI.ToggleLeft(ir, "", scratchMask == 0);
+          }
+
+          using (new EditorGUI.DisabledScope((scratchMask & offsetBit) != offsetBit || (offsetBit == 0 && scratchMask != 0))) {
+            EditorGUI.LabelField(new Rect(ir) { xMin = ir.xMin + 24 }, new GUIContent(names[i], entries.summaries[i]));
+          }
+        }
+
+        // Draw Label
+        EditorGUI.LabelField(labelRect, label, GUIContent.none);
+
+        // Draw Bitmask (if enabled for this attribute)
+        if (ShowMaskBits) {
+
+          // Determine how many bits of bitmask to show
+          int bitCount = 8; // Show at least one byte
+          var lastValue = entries.values[entries.values.Length - 1];
+          for (; bitCount < 32; ++bitCount) {
+            if (lastValue >> (bitCount + 1) == 0) {
+              break;
+            }
+          }
+          
+          // Build the bitmask label
+          if (_sb == null) {
+            _sb = new StringBuilder(32);
+          } else {
+            _sb.Clear();
+          }
+          for (int b = bitCount - 1; b >= 0; --b) {
+            _sb.Append((scratchMask & (1 << b)) == 0 ? "-" : "1");
+            // Space every 4 bits
+            if (b != 0 && b % 4 == 0) {
+              _sb.Append(" ");
+            }
+          }
+          EditorGUI.LabelField(new Rect(labelRect) { xMin = labelRect.xMin + +EditorGUIUtility.labelWidth + FOLDOUT_WIDTH }, $"[{_sb}]");
+          
+        } else {
+          // Draw All/None buttons when foldout is expanded (and bitmask is not shown)
+          var valueAreaRect = new Rect(labelRect) { xMin = labelRect.xMin + EditorGUIUtility.labelWidth + FOLDOUT_WIDTH };
+          if (GUI.Button(new Rect(valueAreaRect) { width = valueAreaRect.width * .5f }, "All")) {
+            scratchMask = (int)(~0);
+          }
+          if (GUI.Button(new Rect(valueAreaRect) { xMin = valueAreaRect.xMin + valueAreaRect.width * .5f }, "None")) {
+            scratchMask = 0;
+          }
+        }
+      } else {
+        EditorGUI.LabelField(r, label, GUIContent.none, EditorStyles.label);
+        scratchMask = EditorGUI.MaskField(new Rect(r) { xMin = r.xMin + EditorGUIUtility.labelWidth + FOLDOUT_WIDTH}, GUIContent.none, property.intValue, entries.names);
+      }
+
+      // Apply any changes which have been made to the mask
+      if (scratchMask != property.intValue) {
+        Undo.RecordObject(property.serializedObject.targetObject, "Change Mask Selection");
+        property.intValue = scratchMask;
+        property.serializedObject.ApplyModifiedProperties();
+      }
+
+      EditorGUI.EndProperty();
+    }
+
+    public override float GetPropertyHeight(SerializedProperty property, GUIContent label) {
+
+      var attr = attribute as VersaMaskAttribute;
+      bool expanded = (attr.AlwaysExpanded || (property.isExpanded && !string.IsNullOrEmpty(label.text)));
+
+      if (expanded) {
+        var entry = GetStringNames();
+        return LINE_SPACING * (entry.names.Length + 1) + PAD * 2;
+      } else
+        return base.GetPropertyHeight(property, label);
+    }
   }
 }
 
@@ -4543,167 +4719,7 @@ namespace Fusion.Editor {
 
 #region Assets/Photon/Fusion/Scripts/Editor/CustomTypes/VersaMaskDrawer.cs
 
-// ---------------------------------------------------------------------------------------------
-// <copyright>PhotonNetwork Framework for Unity - Copyright (C) 2020 Exit Games GmbH</copyright>
-// <author>developer@exitgames.com</author>
-// ---------------------------------------------------------------------------------------------
-
-namespace Fusion.Editor {
-  using UnityEngine;
-  using UnityEditor;
-  using System.Collections.Generic;
-  using System;
-
-  public abstract class VersaMaskDrawer : PropertyDrawer {
-    private static readonly GUIContent ReuseGC = new GUIContent();
-    protected abstract      bool       FirstIsZero { get; }
-
-    private static Dictionary<Type, string[]> _nameArrayLookup;
-    private static GUIStyle                   _buttonStyle;
-    private static GUIStyle ButtonStyle => _buttonStyle ??= new GUIStyle(EditorStyles.miniButton) { fontSize = 9 };
-    protected virtual string[] GetStringNames(SerializedProperty property, bool removeZero) {
-      
-      if (_nameArrayLookup == null) {
-        _nameArrayLookup = new Dictionary<Type, string[]>();
-      }
-      if (_nameArrayLookup.TryGetValue(fieldInfo.FieldType, out var names)) {
-        return names;
-      }
-
-      var maskAttr = attribute as VersaMaskAttribute;
-      var rawNames = maskAttr.CastTo != null ? Enum.GetNames(maskAttr.CastTo) : property.enumDisplayNames;
-
-      // Remove Zero value from the array if need be.
-      int len = removeZero ? rawNames.Length - 1 : rawNames.Length;
-      names = new string[len];
-      for (int i = 0; i < len; i++) {
-        names[i] = rawNames[FirstIsZero ? (i + 1) : i];
-      }
-      _nameArrayLookup.Add(fieldInfo.FieldType, names);
-      return names;
-    }
-
-    const float PAD           = 4;
-    const float LINE_SPACING  = 18;
-    const float BOX_INDENT    = 0; //16 - PAD;
-    const float FOLDOUT_WIDTH = 16;
-
-    public override void OnGUI(Rect r, SerializedProperty property, GUIContent label) {
-
-      EditorGUI.BeginProperty(r, label, property);
-      
-      // currentProperty = property;
-      var attr = attribute as VersaMaskAttribute;
-
-      bool useFoldout = !attr.AlwaysExpanded && !string.IsNullOrEmpty(label.text);
-
-      if (useFoldout) {
-        property.isExpanded = EditorGUI.Toggle(new Rect(r) { xMin = r.xMin + EditorGUIUtility.labelWidth, height = LINE_SPACING, width = FOLDOUT_WIDTH }, property.isExpanded, "Foldout");
-      }
-
-      label = EditorGUI.BeginProperty(r, label, property);
-
-      // For extended drawer types, the mask field needs to be named mask
-      var mask = property.FindPropertyRelative("mask");
-
-      // ELSE If this drawer is being used as an attribute, then the property itself is the enum mask.
-      if (mask == null)
-        mask = property;
-
-      // maskValue = mask.intValue;
-
-      int tempMask;
-      var boxRect = new Rect(r) { xMin = r.xMin + BOX_INDENT };
-      var lineRect = new Rect(boxRect) { height = LINE_SPACING };
-
-      var labelRect = new Rect(r) { height = LINE_SPACING };
-
-       // TODO: Cache most of this in dictionaries to reduce GC
-      var nameArray = GetStringNames(property, FirstIsZero);
-
-      if (attr.AlwaysExpanded || (useFoldout && property.isExpanded)) {
-        tempMask = 0;
-
-        EditorGUI.LabelField(new Rect(boxRect) { yMin = boxRect.yMin + LINE_SPACING }, "", EditorStyles.helpBox);
-        lineRect.xMin += PAD * 2;
-        lineRect.y += PAD;
-
-        var showBitMask = attr.ShowBitmask;
-
-        string drawMask = showBitMask ? "" : null;
-
-        int len = nameArray.Length;
-        for (int i = 0; i < len; ++i) {
-          lineRect.y += LINE_SPACING;
-
-          int offsetBit = 1 << i;
-
-          if (EditorGUI.ToggleLeft(lineRect, "", ((mask.intValue & offsetBit) != 0))) {
-            tempMask |= offsetBit;
-            if (showBitMask) {
-              drawMask = "1" + drawMask;
-            }
-          } else if (showBitMask) {
-            drawMask = "0" + drawMask;
-          }
-
-          using (new EditorGUI.DisabledScope((mask.intValue & offsetBit) != 0 == false)) {
-            EditorGUI.LabelField(new Rect(lineRect) { xMin = lineRect.xMin + 24 }, new GUIContent(nameArray[i]));
-          }
-        }
-
-        // Draw Label
-        EditorGUI.LabelField(labelRect, label, GUIContent.none);
-
-        // Draw Bitmask
-        if (showBitMask) {
-          ReuseGC.text =  $" [{drawMask}]";
-          EditorGUI.LabelField(new Rect(labelRect) { xMin = labelRect.xMin + +EditorGUIUtility.labelWidth + FOLDOUT_WIDTH }, ReuseGC);
-        } else {
-          var valueAreaRect = new Rect(labelRect) { xMin = labelRect.xMin + EditorGUIUtility.labelWidth + FOLDOUT_WIDTH };
-          if (GUI.Button(new Rect(valueAreaRect) { width = valueAreaRect.width * .5f }, "All", ButtonStyle)) {
-            tempMask = (int)(~0);
-          }
-          if (GUI.Button(new Rect(valueAreaRect) { xMin = valueAreaRect.xMin + valueAreaRect.width * .5f }, "None", ButtonStyle)) {
-            tempMask = 0;
-          }
-        }
-        
-      } else {
-        ReuseGC.text = null;
-
-        EditorGUI.LabelField(r, label, ReuseGC, EditorStyles.label);
-
-        tempMask = EditorGUI.MaskField(new Rect(r) { xMin = r.xMin + EditorGUIUtility.labelWidth + FOLDOUT_WIDTH}, GUIContent.none, mask.intValue, nameArray);
-      }
-
-      if (tempMask != mask.intValue) {
-        Undo.RecordObject(property.serializedObject.targetObject, "Change Mask Selection");
-        mask.intValue = tempMask;
-        // maskValue = tempMask;
-        property.serializedObject.ApplyModifiedProperties();
-      }
-      EditorGUI.EndProperty();
-    }
-
-    public override float GetPropertyHeight(SerializedProperty property, GUIContent label) {
-      
-      if (!(attribute is VersaMaskAttribute attr)) {
-        return base.GetPropertyHeight(property, label);
-      }
-
-      var expanded = (attr.AlwaysExpanded || (property.isExpanded && !string.IsNullOrEmpty(label.text)));
-
-      if (expanded) {
-        var stringNames = GetStringNames(property, FirstIsZero);
-        return LINE_SPACING * (stringNames.Length + 1) + PAD * 2;
-      } else
-        return base.GetPropertyHeight(property, label);
-    }
-  }
-
-}
-
+// Deleted Sept 3, 2022
 
 #endregion
 
@@ -6078,7 +6094,7 @@ namespace Fusion.Editor {
     internal const string UrlKarts = "https://doc.photonengine.com/fusion/current/samples/fusion-karts";
     internal const string UrlDragonHuntersVR = "https://doc.photonengine.com/fusion/current/samples/fusion-dragonhunters-vr";
 
-    internal const string UrlFusionDocApi = "https://doc-api.photonengine.com/en/fusion/current/classes.html";
+    internal const string UrlFusionDocApi = "https://doc-api.photonengine.com/en/fusion/current/annotated.html";
 
     internal const string WINDOW_TITLE = "Photon Fusion Hub";
     internal const string SUPPORT = "You can contact the Photon Team using one of the following links. You can also go to Photon Documentation in order to get started.";
@@ -6524,142 +6540,68 @@ namespace Fusion.Editor {
       .Cast<NetworkBehaviour>()
       .Where(x => x.Object && x.Object.IsValid && x.Object.gameObject.activeInHierarchy);
 
-    [NonSerialized]
-    int[] _buffer = Array.Empty<int>();
-
-    
     public override void OnInspectorGUI() {
+
       base.PrepareInspectorGUI();
 
-      bool hasBeenApplied = false;
-#if !FUSION_DISABLE_NBEDITOR_PRESERVE_BACKING_FIELDS
-      // serialize unchanged serialized state into zero-initialized memory;
-      // this makes sure defaults are preserved
-      TransferBackingFields(backingFieldsToState: true);
-#endif
-      try {
+      // copy changes from the state
+      serializedObject.UpdateIfRequiredOrScript();
+      foreach (var target in ValidTargets) {
+        target.CopyStateToBackingFields();
+      }
 
-        // after the original values have been saved, they can be overwritten with
-        // whatever is in the state
-        foreach (var target in ValidTargets) {
-          target.CopyStateToBackingFields();
-        }
-
-        // move C# fields to SerializedObject
-        serializedObject.UpdateIfRequiredOrScript();
-
-        EditorGUI.BeginChangeCheck();
+      EditorGUI.BeginChangeCheck();
 
 #if ODIN_INSPECTOR && !FUSION_ODIN_DISABLED
-        base.DrawDefaultInspector();
+      base.DrawDefaultInspector();
 #else
-        // can networked properties be altered for all selected targets?
-        bool? hasStateAuthorityForAllTargets = null;
-        foreach (var target in ValidTargets) {
-          if (target.Object.HasStateAuthority) {
-            hasStateAuthorityForAllTargets = true;
-          } else {
-            hasStateAuthorityForAllTargets = false;
-            break;
-          }
+      // can networked properties be altered for all selected targets?
+      bool? hasStateAuthorityForAllTargets = null;
+      foreach (var target in ValidTargets) {
+        if (target.Object.HasStateAuthority) {
+          hasStateAuthorityForAllTargets = true;
+        } else {
+          hasStateAuthorityForAllTargets = false;
+          break;
         }
+      }
 
-        SerializedProperty prop = serializedObject.GetIterator();
-        for (bool enterChildren = true; prop.NextVisible(enterChildren); enterChildren = false) {
-          var field = UnityInternal.ScriptAttributeUtility.GetFieldInfoFromProperty(prop, out var type);
-          var attributes = field?.GetCustomAttributes<DefaultForPropertyAttribute>() ?? Array.Empty<DefaultForPropertyAttribute>();
-          if (attributes.Any()) {
-            using (new EditorGUI.DisabledScope(hasStateAuthorityForAllTargets == false)) {
+      SerializedProperty prop = serializedObject.GetIterator();
+      for (bool enterChildren = true; prop.NextVisible(enterChildren); enterChildren = false) {
+        var field = UnityInternal.ScriptAttributeUtility.GetFieldInfoFromProperty(prop, out var type);
+        var attributes = field?.GetCustomAttributes<DefaultForPropertyAttribute>() ?? Array.Empty<DefaultForPropertyAttribute>();
+        if (attributes.Any()) {
+          using (new EditorGUI.DisabledScope(hasStateAuthorityForAllTargets == false)) {
 #if FUSION_DEV
-              DrawNetworkedProperty(prop);
+            DrawNetworkedProperty(prop);
 #else
-              EditorGUILayout.PropertyField(prop, true);
+            EditorGUILayout.PropertyField(prop, true);
 #endif
-            }
-          } else {
-            using (new EditorGUI.DisabledScope(prop.propertyPath == FusionEditorGUI.ScriptPropertyName)) {
-              EditorGUILayout.PropertyField(prop, true);
-            }
           }
-        }
-#endif
-        
-        if (EditorGUI.EndChangeCheck()) {
-          // serialized properties -> C# fields
-          serializedObject.ApplyModifiedProperties();
-          hasBeenApplied = true;
-
-          // C# fields -> state
-          foreach (var target in ValidTargets) {
-            if (target.Object.HasStateAuthority) {
-              target.CopyBackingFieldsToState(false);
-            }
+        } else {
+          using (new EditorGUI.DisabledScope(prop.propertyPath == FusionEditorGUI.ScriptPropertyName)) {
+            EditorGUILayout.PropertyField(prop, true);
           }
-        }
-      } finally {
-#if !FUSION_DISABLE_NBEDITOR_PRESERVE_BACKING_FIELDS
-        // now restore the default values
-        TransferBackingFields(backingFieldsToState: false);
-        serializedObject.Update();
-        if (hasBeenApplied) {
-          serializedObject.ApplyModifiedProperties();
         }
       }
 #endif
+
+      if (EditorGUI.EndChangeCheck()) {
+        serializedObject.ApplyModifiedProperties();
+
+        // move changes to the state
+        foreach (var target in ValidTargets) {
+          if (target.Object.HasStateAuthority) {
+            target.CopyBackingFieldsToState(false);
+          }
+          
+        }
+      }
 
       DrawNetworkObjectCheck();
       DrawBehaviourActions();
     }
 
-    unsafe bool TransferBackingFields(bool backingFieldsToState) {
-
-      if (Allocator.REPLICATE_WORD_SIZE == sizeof(int)) {
-        int offset = 0;
-        bool hadChanges = false;
-
-        int requiredSize = ValidTargets.Sum(x => x.WordCount);
-        if (backingFieldsToState) {
-          if (_buffer.Length >= requiredSize) {
-            Array.Clear(_buffer, 0, _buffer.Length);
-          } else {
-            _buffer = new int[requiredSize];
-          }
-        } else {
-          if (_buffer.Length < requiredSize) {
-            throw new InvalidOperationException("Buffer is too small");
-          }
-        }
-
-        fixed (int* p = _buffer) {
-          foreach (var target in ValidTargets) {
-            var ptr = target.Ptr;
-
-            try {
-              target.Ptr = p + offset;
-              if (backingFieldsToState) {
-                target.CopyBackingFieldsToState(false);
-              } else {
-                target.CopyStateToBackingFields();
-              }
-              
-              if (!hadChanges) {
-                if (Native.MemCmp(target.Ptr, ptr, target.WordCount * Allocator.REPLICATE_WORD_SIZE) != 0) {
-                  hadChanges = true;
-                }
-              }
-
-            } finally {
-              target.Ptr = ptr;
-            }
-
-            offset += target.WordCount;
-          }
-        }
-
-        return hadChanges;
-      }
-    }
-    
 
     /// <summary>
     /// Checks if GameObject or parent GameObject has a NetworkObject, and draws a warning and buttons for adding one if not.
@@ -8174,7 +8116,7 @@ namespace Fusion.Editor {
       RuntimeAnimatorController rac = a.runtimeAnimatorController;
       AnimatorOverrideController overrideController = rac as AnimatorOverrideController;
 
-      // recurse until no override controller is found
+      /// recurse until no override controller is found
       while (overrideController != null) {
         rac = overrideController.runtimeAnimatorController;
         overrideController = rac as AnimatorOverrideController;
@@ -8204,7 +8146,7 @@ namespace Fusion.Editor {
         }
     }
 
-    // ------------------------------ STATES --------------------------------------
+    /// ------------------------------ STATES --------------------------------------
 
     public static void GetStatesNames(this AnimatorController ctr, List<string> namelist) {
       namelist.Clear();
@@ -8341,7 +8283,7 @@ namespace Fusion.Editor {
     
     // This method is a near copy of the code used in NMA for determining WordCount, but uses GetController instead.
     internal static (int paramCount, int boolCount, int layerCount, int words) GetWordCount(this NetworkMecanimAnimator netAnim) {
-      // always get new Animator in case it has changed.
+      /// always get new Animator in case it has changed.
       Animator animator = netAnim.Animator;
       if (animator == null) {
         animator = netAnim.GetComponent<Animator>();
@@ -8413,7 +8355,7 @@ namespace Fusion.Editor {
         //ref double lastRebuildTime
         ) {
 
-      // always get new Animator in case it has changed.
+      /// always get new Animator in case it has changed.
       Animator animator = netAnim.Animator;
       if (animator == null)
         animator = netAnim.GetComponent<Animator>();
