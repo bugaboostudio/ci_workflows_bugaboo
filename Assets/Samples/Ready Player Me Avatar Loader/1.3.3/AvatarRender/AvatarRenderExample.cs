@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using ReadyPlayerMe.Core;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ReadyPlayerMe.AvatarLoader
 {
@@ -16,7 +17,8 @@ namespace ReadyPlayerMe.AvatarLoader
         [SerializeField][Tooltip("The scene to use for the avatar render.")]
         private AvatarRenderScene scene = AvatarRenderScene.FullBodyPostureTransparent;
         [SerializeField] 
-        private SpriteRenderer spriteRenderer;
+       // private SpriteRenderer spriteRenderer;
+        private RawImage spriteRenderer;
         [SerializeField] 
         private GameObject loadingPanel;
 
@@ -35,15 +37,17 @@ namespace ReadyPlayerMe.AvatarLoader
             var avatarRenderer = new AvatarRenderLoader();
             avatarRenderer.OnCompleted = UpdateSprite;
             avatarRenderer.OnFailed = Fail;
-            avatarRenderer.LoadRender(url, scene, blendShapeMeshes, blendShapes);
+            ///avatarRenderer.LoadRender(url, scene, blendShapeMeshes, blendShapes);
+            avatarRenderer.LoadRender(url, scene);
             loadingPanel.SetActive(true);
         }
 
         /// Updates the sprite renderer with the provided render
         private void UpdateSprite(Texture2D render)
         {
-            var sprite = Sprite.Create(render, new Rect(0, 0, render.width, render.height), new Vector2(.5f, .5f));
-            spriteRenderer.sprite = sprite;
+            ///var sprite = Sprite.Create(render, new Rect(0, 0, render.width, render.height), new Vector2(.5f, .5f));
+            //spriteRenderer.sprite = sprite;
+            spriteRenderer.texture = render;
             loadingPanel.SetActive(false);
             SDKLogger.Log(TAG, "Sprite Updated ");
         }
