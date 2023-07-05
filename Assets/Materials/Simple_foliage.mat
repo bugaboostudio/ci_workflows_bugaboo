@@ -2,20 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 8
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Simple_foliage
   m_Shader: {fileID: 4800000, guid: 4a08f80188dbb924cb1e472314035df7, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords:
-  - GEOM_TYPE_LEAF
-  - _EMISSION
-  - _KEYWORD0_ON
-  - _RIMLIGHTINGMULTIPLY1_ON
-  - _RIMLIGHTINGMULTIPLY_ON
+  m_ShaderKeywords: GEOM_TYPE_LEAF _EMISSION _KEYWORD0_ON _RIMLIGHTINGMULTIPLY1_ON
+    _RIMLIGHTINGMULTIPLY_ON
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -101,11 +96,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Ints: []
     m_Floats:
     - _AlphaCutoff: 0.5
-    - _BaseCellOffset: 0.28
-    - _BaseCellSharpness: 0.79
+    - _BaseCellOffset: 0.3
+    - _BaseCellSharpness: 0.857
     - _BendByView: 0.5
     - _Blendingdistance: 40
     - _Bshapestrength: 1
@@ -129,7 +123,7 @@ Material:
     - _GrassBottom: 0
     - _GrassTop: 1
     - _Gshapestrength: 0
-    - _IndirectDiffuseContribution: 0.98
+    - _IndirectDiffuseContribution: 1
     - _InvFade: 0.28
     - _Keyword0: 1
     - _Keyword1: 0
@@ -145,7 +139,7 @@ Material:
     - _RimStr: 5
     - _Rimlightingmultiply: 1
     - _Rimlightingmultiply1: 1
-    - _Rimoffset: -0.63
+    - _Rimoffset: -4
     - _Rshapestrength: 1
     - _Rshapestrength1: 0
     - _ShadowContribution: 1
@@ -168,8 +162,8 @@ Material:
     - _WaveAndDistortion: 2.6
     - _WaveFrequency: 42.6
     - _WaveSpeed: 2
-    - _Wind: 0.01
-    - _WindNoise: 0.5
+    - _Wind: 0.07
+    - _WindNoise: 0.4
     - _WindQuality: 2
     - _ZWrite: 1
     - __dirty: 0
@@ -191,4 +185,3 @@ Material:
     - _WavingTintDarken: {r: 0.41176468, g: 0.41176468, b: 0.41176468, a: 0.628}
     - _WavingTintLighten: {r: 0.30147058, g: 0.30147058, b: 0.30147058, a: 0.5}
     - _diffuseColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
