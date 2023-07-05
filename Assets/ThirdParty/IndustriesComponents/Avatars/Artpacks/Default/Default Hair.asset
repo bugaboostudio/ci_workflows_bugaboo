@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0f5982b42a2234ba280286c8bb8bb8, type: 3}
+  m_Name: Default Hair
+  m_EditorClassIdentifier: 
+  Type: 4
+  DefaultPrefab: {fileID: 3134826308672931615, guid: e3d2023ca34afc64fad17bec76d70cc0,
+    type: 3}
+  PreviewButtonOffset:
+    Offset: {x: 0, y: 0, z: 0}
+    Scale: {x: 30, y: 30, z: 30}
+    Rotation: {x: 0, y: 0, z: 0}
+  Assets:
+  - Mesh: {fileID: 2933621521906231697, guid: e0a521cdc30b85449a4193312441f41d, type: 3}
+    Material: {fileID: 0}
+    Prefab: {fileID: 0}
+    Texture: {fileID: 0}
+  - Mesh: {fileID: 2751963610929725372, guid: e0a521cdc30b85449a4193312441f41d, type: 3}
+    Material: {fileID: 0}
+    Prefab: {fileID: 0}
+    Texture: {fileID: 0}
+  - Mesh: {fileID: -703399100173242023, guid: e0a521cdc30b85449a4193312441f41d, type: 3}
+    Material: {fileID: 0}
+    Prefab: {fileID: 0}
+    Texture: {fileID: 0}
+  - Mesh: {fileID: 1242471271220902052, guid: e0a521cdc30b85449a4193312441f41d, type: 3}
+    Material: {fileID: 0}
+    Prefab: {fileID: 0}
+    Texture: {fileID: 0}

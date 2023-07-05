@@ -1,0 +1,285 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4130662102081404850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4130662102081404851}
+  - component: {fileID: 4130662102081404848}
+  - component: {fileID: 5454664612078839782}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4130662102081404851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4130662102081404850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4130662102081404848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4130662102081404850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ca787427c83fc40b4a90a29ec99906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSceneAudioSource: {fileID: 0}
+  sounds:
+  - name: OnMenuItemSelected
+    clip: {fileID: 8300000, guid: 6b4441bcec0da7f47950d21506438a24, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: OnTouchButton
+    clip: {fileID: 8300000, guid: 58f30de3dfa52194eb7ec32696904f38, type: 3}
+    volume: 1
+    pitch: 1.146
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: OnMenuOpen
+    clip: {fileID: 8300000, guid: 769074df3e2b911458224b24ba7688cc, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: OnMenuClose
+    clip: {fileID: 8300000, guid: f6181c6318d00e246817513aa0eba463, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: OnMenuSelect
+    clip: {fileID: 8300000, guid: dd33461fb7e224c4e8b6ead8d2a7d971, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: OnTeleport
+    clip: {fileID: 8300000, guid: 769074df3e2b911458224b24ba7688cc, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: OnRotate
+    clip: {fileID: 8300000, guid: 3eff3ff1c0d05b5419b288a18ad06ce3, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: PlayerJoinDynamicChatBubble
+    clip: {fileID: 8300000, guid: de9fe98b266a2214191a19b612da39bd, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: PlayerLeftDynamicChatBubble
+    clip: {fileID: 8300000, guid: c0b46d6c5000c90418843045ed7898ae, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: OnConnectedToServer
+    clip: {fileID: 8300000, guid: a1adfc3408a7cec45bdc4de6c30ffe0e, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: OnConnectFailed
+    clip: {fileID: 8300000, guid: 16baf54c25368b84d93dfb63d2042d3f, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: OnDisconnectedFromServer
+    clip: {fileID: 8300000, guid: 842401821d22f1c45a0ac05c475370f0, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: OnPlayerJoined
+    clip: {fileID: 8300000, guid: 2312ee273bb507a4ab61e96acbbffc8a, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: OnPlayerLeft
+    clip: {fileID: 8300000, guid: c14998421118088488e7b9fce047ea95, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: OnShutdown
+    clip: {fileID: 8300000, guid: a1722b8fbd504fd46a19d36ad05d6212, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: OnAvatarLoaded
+    clip: {fileID: 8300000, guid: 2312ee273bb507a4ab61e96acbbffc8a, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: Ambience1
+    clip: {fileID: 8300000, guid: 1f37e6bdf3c71fc4f856df58d4b08c6f, type: 3}
+    volume: 0.213
+    pitch: 0.91
+    loop: 1
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: 7478094954900612689, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: Ambience2
+    clip: {fileID: 8300000, guid: 38dc1f48c4489e44091425ada5d30906, type: 3}
+    volume: 0.43
+    pitch: 0.91
+    loop: 1
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: 7478094954900612689, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: Ambience3
+    clip: {fileID: 8300000, guid: b460cbb6665ed444b806e274736461f7, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 1
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: 7478094954900612689, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  - name: OnEmoticonSpawn
+    clip: {fileID: 8300000, guid: ca3db51b64816bd48b882fcb3eb3ac5d, type: 3}
+    volume: 0.352
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    outputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+--- !u!82 &5454664612078839782
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4130662102081404850}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -1067009706318654196, guid: ca6b19b4f6f527546aee8d4592638ac1, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

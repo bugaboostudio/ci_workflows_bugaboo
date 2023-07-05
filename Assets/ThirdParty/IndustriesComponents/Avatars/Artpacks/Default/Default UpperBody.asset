@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0f5982b42a2234ba280286c8bb8bb8, type: 3}
+  m_Name: Default UpperBody
+  m_EditorClassIdentifier: 
+  Type: 5
+  DefaultPrefab: {fileID: 3134826308672931615, guid: 0aaecec1f8c0282448c9f08f416701fa,
+    type: 3}
+  PreviewButtonOffset:
+    Offset: {x: 0, y: 0, z: 3.5}
+    Scale: {x: 1000, y: 1000, z: 1000}
+    Rotation: {x: 0, y: 0, z: 0}
+  Assets:
+  - Mesh: {fileID: 3158055602910801560, guid: 89414b55d92ad7b459a8052a418cfd14, type: 3}
+    Material: {fileID: 0}
+    Prefab: {fileID: 0}
+    Texture: {fileID: 0}
+  - Mesh: {fileID: 8491674926729289310, guid: 89414b55d92ad7b459a8052a418cfd14, type: 3}
+    Material: {fileID: 0}
+    Prefab: {fileID: 0}
+    Texture: {fileID: 0}

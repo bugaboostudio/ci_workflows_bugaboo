@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &205396887850693682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 205396887850693680}
+  - component: {fileID: 205396887850693683}
+  - component: {fileID: 205396887850693710}
+  m_Layer: 0
+  m_Name: Bot Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &205396887850693680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205396887850693682}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -282.73416, y: -510.75024, z: -699.29926}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 205396888789255269}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &205396887850693683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205396887850693682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e98f29f739b4a64a80c744859a81c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  botSpawnAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Bot Spawn
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 39c205cf-5e6b-49f5-9ae2-47f938f0e2b9
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 00d278c4-d09a-4719-bc1d-cec6c91ed564
+        m_Path: <Keyboard>/b
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Bot Spawn
+        m_Flags: 0
+      - m_Name: 
+        m_Id: d96cd0f4-e4d3-41dd-b0db-8fd73bfe97a2
+        m_Path: <XRController>{LeftHand}/menu
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Bot Spawn
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  rigInfo: {fileID: 0}
+  botPrefab: {fileID: 1083405686801825272, guid: 9699b5516d1900b47ae40d11fa46ca1f, type: 3}
+  longPressDuration: 0.6
+  botToSpawnAfterLongPress: 25
+  maxBot: 100
+  botMaxDistanceToLocalUser: 10
+  botMinDistanceToLocalUser: 2
+  botsToCreate: 0
+  lastBotCreation: -1
+  forbidZoneToNonUserRig: 1
+  managers: {fileID: 0}
+--- !u!114 &205396887850693710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205396887850693682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInterest: 0
+  DefaultInterestGroups: []
+  DestroyWhenStateAuthorityLeaves: 0
+  AllowStateAuthorityOverride: 1
+  AoiPositionSource: {fileID: 0}
+  Flags: 2561
+  NetworkGuid:
+    RawGuidValue: de378a019e824f71b8700b9f19f5101f
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 205396887850693683}
+  SimulationBehaviours: []
+--- !u!1 &205396888789255268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 205396888789255269}
+  m_Layer: 0
+  m_Name: NetworkObjectBasedManagers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &205396888789255269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205396888789255268}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 271.64307, y: 511.23904, z: -7.2212486}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 205396887850693680}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

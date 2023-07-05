@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced1563ff0cabe14ba4fb2b6d46e6a51, type: 3}
+  m_Name: Art Pack Default Animations
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  IsCustomizable: 1
+  BasePrefab: {fileID: 0}
+  ShowcaseBotPrefab: {fileID: 0}
+  Prefix: default
+  AvatarPresets: {fileID: 0}
+  Categories: []
+  EmoteAnimations:
+  - Clip: {fileID: 7400000, guid: e1bfb1a91bbb63743b944d86d16b3f4a, type: 2}
+    ButtonText: Wave
+    ChatSentence: waves.
+  - Clip: {fileID: 7400000, guid: 5600d4c6af54ea946a71d07c2ee71590, type: 2}
+    ButtonText: Yes
+    ChatSentence: nods.
+  - Clip: {fileID: 7400000, guid: 32fe1da7e28f3134f883d01546e3ecd5, type: 2}
+    ButtonText: No
+    ChatSentence: shakes their head.
+  - Clip: {fileID: 7400000, guid: ca6adc1a09e92554eb5f80af8a1e2749, type: 2}
+    ButtonText: Shrug
+    ChatSentence: shrugs.
+  - Clip: {fileID: 7400000, guid: 510677e97d63bdd42b9afd9176f21c18, type: 2}
+    ButtonText: Laugh
+    ChatSentence: laughs.
+  CustomizationAnimations:
+  - {fileID: 7400000, guid: bdff72aab87a1624b9dd37ade96e745c, type: 2}
+  - {fileID: 7400000, guid: 5600d4c6af54ea946a71d07c2ee71590, type: 2}
+  - {fileID: 7400000, guid: 5600d4c6af54ea946a71d07c2ee71590, type: 2}
+  CustomizationWelcomeAnimations:
+  - {fileID: 7400000, guid: e1bfb1a91bbb63743b944d86d16b3f4a, type: 2}

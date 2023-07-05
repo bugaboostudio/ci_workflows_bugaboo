@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced1563ff0cabe14ba4fb2b6d46e6a51, type: 3}
+  m_Name: Art Pack Default
+  m_EditorClassIdentifier: 
+  IsEnabled: 0
+  BasePrefab: {fileID: 4385295772478856435, guid: 23ed460c2c310c94a9e9242bca6e6cf8,
+    type: 3}
+  ShowcaseBotPrefab: {fileID: 4597433900023129645, guid: 2b2b6f56446aee745bfea45f60977dd4,
+    type: 3}
+  Prefix: default
+  AvatarPresets: {fileID: 0}
+  Categories:
+  - {fileID: 11400000, guid: fe9245bbb9ddbb3419a73db900cc478f, type: 2}
+  - {fileID: 11400000, guid: a2351dee9e805414083f0976755058d4, type: 2}
+  - {fileID: 11400000, guid: 03c5332d7d3a8ca41a23e7744844d3c5, type: 2}
+  - {fileID: 11400000, guid: 1f947e41ee1db7a4bbe0d60902a82b00, type: 2}
+  EmoteAnimations: []
+  CustomizationAnimations: []
+  CustomizationWelcomeAnimations: []
