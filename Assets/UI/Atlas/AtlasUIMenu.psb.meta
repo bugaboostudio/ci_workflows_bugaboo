@@ -1,0 +1,2817 @@
+fileFormatVersion: 2
+guid: 8b69c8838080bf64ca71788980e87543
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData:
+  - name: UiBox_BottomMenu
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 60, y: 60, z: 60, w: 60}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 748
+      width: 220
+      height: 221
+    spriteID: 8ec035506cfa5e64da5d2049aebc47eb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 748}
+    spritePosition: {x: 882, y: 1659}
+  - name: UiBtn_CalendarButtonWithoutEvent
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1353
+      width: 189
+      height: 180
+    spriteID: 7dbb2ca8202c9d5438e175aee2d1cdb7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1353}
+    spritePosition: {x: 603, y: 1}
+  - name: UiBtn_CalendarButtonSelected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 810
+      y: 392
+      width: 196
+      height: 180
+    spriteID: ab85ec48314459a498851d8eb0f41a57
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 810, y: 392}
+    spritePosition: {x: 395, y: 1}
+  - name: UiBtn_CalendarButtonWithoutEventSelected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 60, y: 60, z: 60, w: 60}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 977
+      width: 196
+      height: 180
+    spriteID: fe9f6effd66062f4ebe515623803d708
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 977}
+    spritePosition: {x: 199, y: 1}
+  - name: UiBtn_CalendarButtonWithEvent
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1165
+      width: 196
+      height: 180
+    spriteID: c3b56ca91c2728c4e843ab67d95f2c46
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1165}
+    spritePosition: {x: 3, y: 1}
+  - name: UiBtn_FlatBlue
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 55, y: 0, z: 55, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1911
+      width: 141
+      height: 105
+    spriteID: 5dca91c36d07b5544ab3aafed40dd780
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1911}
+    spritePosition: {x: 922, y: 1333}
+  - name: UiBtn_FlatRedOutline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 55, y: 0, z: 55, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 729
+      y: 748
+      width: 141
+      height: 102
+    spriteID: 6a88f901924517d478e4133a3ff07fdd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 729, y: 748}
+    spritePosition: {x: 922, y: 1505}
+  - name: UiIcon_Visit
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 529
+      y: 1887
+      width: 57
+      height: 63
+    spriteID: 05811a00c1b4f24428aac607d4d8227b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 529, y: 1887}
+    spritePosition: {x: 672, y: 737}
+  - name: UiIcon_Medal2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 1010
+      width: 91
+      height: 126
+    spriteID: fdc5a46ae8ca8664c8603467fcc37bd2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 1010}
+    spritePosition: {x: 652, y: 1685}
+  - name: UiIcon_Medal1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 876
+      width: 114
+      height: 126
+    spriteID: f9c5e3f0ff58bef4b9b910d4c645e198
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 876}
+    spritePosition: {x: 641, y: 1533}
+  - name: UiIcon_Negative
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 1144
+      width: 94
+      height: 94
+    spriteID: e5e7969e9e9289e409c12f5252a94dde
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 1144}
+    spritePosition: {x: 650, y: 1398}
+  - name: UiIcon_Interact
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 1811
+      width: 104
+      height: 142
+    spriteID: f30028273539e354d98fbc15f4d69470
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 1811}
+    spritePosition: {x: 452, y: 1055}
+  - name: UiIcon_Edit
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 153
+      y: 1911
+      width: 70
+      height: 71
+    spriteID: 612718f7eb64da64b8e3662d9050107b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 153, y: 1911}
+    spritePosition: {x: 672, y: 881}
+  - name: UiIcon_NormalBell
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 1961
+      width: 90
+      height: 76
+    spriteID: 48368d42f0c526a488f7b5bde1a0ae9a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 1961}
+    spritePosition: {x: 652, y: 1004}
+  - name: UiIcon_MuteBell
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 529
+      y: 1811
+      width: 64
+      height: 68
+    spriteID: 61b77a60c426d4846b96d1884f1a5063
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 529, y: 1811}
+    spritePosition: {x: 665, y: 1163}
+  - name: UiIcon_Triangle
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 948
+      y: 711
+      width: 32
+      height: 29
+    spriteID: faa66c902ba54ba4790016573169d2b8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 948, y: 711}
+    spritePosition: {x: 681, y: 1308}
+  - name: UiIcon_ThumbsUp
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 515
+      y: 1961
+      width: 74
+      height: 74
+    spriteID: cdda016609d028b468c3e35c181df848
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 515, y: 1961}
+    spritePosition: {x: 51, y: 900}
+  - name: UiIcon_ClapHand
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 1246
+      width: 86
+      height: 93
+    spriteID: 8779b7beab9016b4ca45e4c1edb36756
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 1246}
+    spritePosition: {x: 253, y: 881}
+  - name: UiIcon_Config
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 948
+      y: 580
+      width: 35
+      height: 123
+    spriteID: 73e0bf30c018bd446a23af05d0257a31
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 948, y: 580}
+    spritePosition: {x: 486, y: 881}
+  - name: UiIcon_Reactions
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 810
+      y: 580
+      width: 130
+      height: 125
+    spriteID: 6cb9c05166751f14eb4d0e965b20b1b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 810, y: 580}
+    spritePosition: {x: 439, y: 1270}
+  - name: UiBtn_Mic
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1541
+      width: 177
+      height: 177
+    spriteID: 0d608a0791e04a14fa8314f4ac9b27bc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1541}
+    spritePosition: {x: 896, y: 847}
+  - name: UiBtn_MicDeactivated
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1726
+      width: 177
+      height: 177
+    spriteID: 7e15d23b6767215419ddaa949ebbe948
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1726}
+    spritePosition: {x: 904, y: 1072}
+  - name: UiBox_CardInfo
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 810
+      y: 192
+      width: 192
+      height: 192
+    spriteID: 63a69403b0062dd4686969dde3ba9854
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 810, y: 192}
+    spritePosition: {x: 20, y: 608}
+  - name: Camada 35
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 154}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 798
+      height: 736
+    spriteID: 9f4bff290034fdf40bff9d38f64cc5bf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 1216, y: 1275}
+  - name: UiBtn_ClassSelected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 1303
+      width: 176
+      height: 177
+    spriteID: d0dbb7585f3e98148b827adc6978dee0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 1303}
+    spritePosition: {x: 0, y: 1870}
+  - name: UiBtn_Class
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 931
+      width: 168
+      height: 168
+    spriteID: 2473ae4ebf5c45f4d97ce1b37cc1bc6c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 931}
+    spritePosition: {x: 212, y: 1877}
+  - name: UiBtn_Profile
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 1488
+      width: 176
+      height: 177
+    spriteID: 74e72303209444c4783445c3dea829d4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 1488}
+    spritePosition: {x: 0, y: 1668}
+  - name: UiBtn_ProfileSelected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 1107
+      width: 168
+      height: 168
+    spriteID: c37e50f72e9c4484ba263671ee0b1b2c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 1107}
+    spritePosition: {x: 212, y: 1672}
+  - name: UiBtn_Map
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 748
+      width: 176
+      height: 175
+    spriteID: 757759828177b50479b86c8ca26bd0f4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 748}
+    spritePosition: {x: 0, y: 1468}
+  - name: UiBtn_MapSelected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 1283
+      width: 168
+      height: 168
+    spriteID: 3b69ec390a76b024ea9e84a570e55918
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 1283}
+    spritePosition: {x: 212, y: 1471}
+  - name: UiBtn_CalendarSlected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 1459
+      width: 168
+      height: 168
+    spriteID: abffe36056e1afb4691d3912bcbc22b4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 1459}
+    spritePosition: {x: 212, y: 1249}
+  - name: UiBtn_Calender
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 1673
+      width: 176
+      height: 177
+    spriteID: b3b7adc3170c20e42a8a006e8e5e31f8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 1673}
+    spritePosition: {x: 0, y: 1249}
+  - name: UiBtn_ChatSelected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 1635
+      width: 168
+      height: 168
+    spriteID: 46ec28acc8103874b9ca3921433176b0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 1635}
+    spritePosition: {x: 212, y: 1042}
+  - name: UiBtn_Chat
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 1858
+      width: 176
+      height: 177
+    spriteID: 62955d0aa5fe10445ae73b1234f142d3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 1858}
+    spritePosition: {x: 0, y: 1037}
+  - name: UiBtn_CircleNormal
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 748
+      width: 177
+      height: 177
+    spriteID: 02cce8cef3f19e949a23224a6d67b179
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 748}
+    spritePosition: {x: 416, y: 1867}
+  - name: UiBtn_CirclePressed
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 933
+      width: 177
+      height: 177
+    spriteID: d2c766343e946484ba0fe300aef5251b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 933}
+    spritePosition: {x: 416, y: 1668}
+  - name: UiBtn_CircleDeactvated
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 1118
+      width: 177
+      height: 177
+    spriteID: aef46a833d3ae484ca7cbac0f0b86480
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 1118}
+    spritePosition: {x: 416, y: 1462}
+  - name: UiIcon_Room
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 1429
+      width: 75
+      height: 70
+    spriteID: 5ad281160620b3e40a2f4f7f3b304efd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 1429}
+    spritePosition: {x: 258, y: 715}
+  - name: UiIcon_ClockEvent
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 1347
+      width: 74
+      height: 74
+    spriteID: 28c03f5cd76dd614fbbe082125051f26
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 1347}
+    spritePosition: {x: 260, y: 617}
+  - name: UiMask_EventParticipantsProfile
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 748
+      width: 120
+      height: 120
+    spriteID: 94cebd4d0f5e496449bbf37813b2443f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 748}
+    spritePosition: {x: 235, y: 220}
+  - name: UiBtn_CalendarButtonWithEventandNews
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 810
+      y: 4
+      width: 208
+      height: 180
+    spriteID: 1f2c7fcad10888442abc4a8af36e03ae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 810, y: 4}
+    spritePosition: {x: 12, y: 190}
+  - name: UiIcon_RaiseHand
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 1507
+      width: 60
+      height: 70
+    spriteID: e960b303291acf443825ef73d3c48c73
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 1507}
+    spritePosition: {x: 668, y: 634}
+  rigSpriteImportData:
+  - name: UiBox_BottomMenu
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 748
+      width: 220
+      height: 221
+    spriteID: 9879f0e8a09f90e438e7904ef3908cbd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 748}
+    spritePosition: {x: 882, y: 1659}
+  - name: UiBtn_CalendarButtonWithoutEvent
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1353
+      width: 189
+      height: 180
+    spriteID: dd34fabc1bf65454d8107d3286cfb814
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1353}
+    spritePosition: {x: 603, y: 1}
+  - name: UiBtn_CalendarButtonSelected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 810
+      y: 392
+      width: 196
+      height: 180
+    spriteID: 8ce2026d9935408469247d3517bc12b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 810, y: 392}
+    spritePosition: {x: 395, y: 1}
+  - name: UiBtn_CalendarButtonWithoutEventSelected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 977
+      width: 196
+      height: 180
+    spriteID: 7a1a7dd2bd03bd74791b27377734ff4b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 977}
+    spritePosition: {x: 199, y: 1}
+  - name: UiBtn_CalendarButtonWithEvent
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1165
+      width: 196
+      height: 180
+    spriteID: 25ef5754604ccf440a7d09accf222758
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1165}
+    spritePosition: {x: 3, y: 1}
+  - name: UiBtn_FlatBlue
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1911
+      width: 141
+      height: 105
+    spriteID: b3f3e7bc60e17b9488edff453eb16bb9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1911}
+    spritePosition: {x: 922, y: 1333}
+  - name: UiBtn_FlatRedOutline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 729
+      y: 748
+      width: 141
+      height: 102
+    spriteID: 071d37bc5f2ab594f8970721427f460e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 729, y: 748}
+    spritePosition: {x: 922, y: 1505}
+  - name: UiIcon_Visit
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 529
+      y: 1887
+      width: 57
+      height: 63
+    spriteID: fc00c8f1825672e42a619cb2d591fd64
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 529, y: 1887}
+    spritePosition: {x: 672, y: 737}
+  - name: UiIcon_Medal2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 1010
+      width: 91
+      height: 126
+    spriteID: a103d6af71f13a44ea2d50ede012d089
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 1010}
+    spritePosition: {x: 652, y: 1685}
+  - name: UiIcon_Medal1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 876
+      width: 114
+      height: 126
+    spriteID: e61ac66e545e40e498983f68d5bd9560
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 876}
+    spritePosition: {x: 641, y: 1533}
+  - name: UiIcon_Negative
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 1144
+      width: 94
+      height: 94
+    spriteID: a978c8667ecc9e44bbda71f9e7fddab2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 1144}
+    spritePosition: {x: 650, y: 1398}
+  - name: UiIcon_Interact
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 1811
+      width: 104
+      height: 142
+    spriteID: d96b515c7d0b3684e88777ccebc00379
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 1811}
+    spritePosition: {x: 452, y: 1055}
+  - name: UiIcon_Edit
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 153
+      y: 1911
+      width: 70
+      height: 71
+    spriteID: 41d4773d8e76ea043a673f0797a7edcd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 153, y: 1911}
+    spritePosition: {x: 672, y: 881}
+  - name: UiIcon_NormalBell
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 1961
+      width: 90
+      height: 76
+    spriteID: 5e77fef57c15d1445a8bb79638ba28f9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 1961}
+    spritePosition: {x: 652, y: 1004}
+  - name: UiIcon_MuteBell
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 529
+      y: 1811
+      width: 64
+      height: 68
+    spriteID: 0ca84b28b9ffd704cb2d375ccd02492f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 529, y: 1811}
+    spritePosition: {x: 665, y: 1163}
+  - name: UiIcon_Triangle
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 948
+      y: 711
+      width: 32
+      height: 29
+    spriteID: 4bf95b9ccaf3d8445954700404fcd721
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 948, y: 711}
+    spritePosition: {x: 681, y: 1308}
+  - name: UiIcon_ThumbsUp
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 515
+      y: 1961
+      width: 74
+      height: 74
+    spriteID: 9be50e3cc1d2c6142887369d2b06bc84
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 515, y: 1961}
+    spritePosition: {x: 51, y: 900}
+  - name: UiIcon_ClapHand
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 1246
+      width: 86
+      height: 93
+    spriteID: 6eec465e69069e24489b958b27fb6e95
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 1246}
+    spritePosition: {x: 253, y: 881}
+  - name: UiIcon_Config
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 948
+      y: 580
+      width: 35
+      height: 123
+    spriteID: a42bcb20aacf013469920ecc8cd33c23
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 948, y: 580}
+    spritePosition: {x: 486, y: 881}
+  - name: UiIcon_Reactions
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 810
+      y: 580
+      width: 130
+      height: 125
+    spriteID: ff34b0b7f766bd84fa98aa6aba3ecc69
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 810, y: 580}
+    spritePosition: {x: 439, y: 1270}
+  - name: UiBtn_Mic
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1541
+      width: 177
+      height: 177
+    spriteID: b4864e0c2edd7d343b105a9068cdcadb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1541}
+    spritePosition: {x: 896, y: 847}
+  - name: UiBtn_MicDeactivated
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1726
+      width: 177
+      height: 177
+    spriteID: 4aa8e206a520f1e49af483f23d7430da
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1726}
+    spritePosition: {x: 904, y: 1072}
+  - name: UiBox_CardInfo
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 810
+      y: 192
+      width: 192
+      height: 192
+    spriteID: 3435acf651154224a84b6be1864376cb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 810, y: 192}
+    spritePosition: {x: 20, y: 608}
+  - name: Camada 35
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 798
+      height: 736
+    spriteID: 2c97022094638a742b26028b0dec0169
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 1216, y: 1275}
+  - name: UiBtn_ClassSelected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 1303
+      width: 176
+      height: 177
+    spriteID: b5835241dc1da904ea88e693be646b51
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 1303}
+    spritePosition: {x: 0, y: 1870}
+  - name: UiBtn_Class
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 931
+      width: 168
+      height: 168
+    spriteID: c545f4ef89d4e7a47a7c8e4555463a26
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 931}
+    spritePosition: {x: 212, y: 1877}
+  - name: UiBtn_Profile
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 1488
+      width: 176
+      height: 177
+    spriteID: 973ce3241a030484e86bbd9d13e07761
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 1488}
+    spritePosition: {x: 0, y: 1668}
+  - name: UiBtn_ProfileSelected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 1107
+      width: 168
+      height: 168
+    spriteID: d6b8d35c79d7dfc49a57c62cf90af078
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 1107}
+    spritePosition: {x: 212, y: 1672}
+  - name: UiBtn_Map
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 748
+      width: 176
+      height: 175
+    spriteID: 660e7aec0f366a447bb3e3e0c4205540
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 748}
+    spritePosition: {x: 0, y: 1468}
+  - name: UiBtn_MapSelected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 1283
+      width: 168
+      height: 168
+    spriteID: 11114b51ad7e2f645bf5cdb8775cd8ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 1283}
+    spritePosition: {x: 212, y: 1471}
+  - name: UiBtn_CalendarSlected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 1459
+      width: 168
+      height: 168
+    spriteID: ee57630925cb1ba4fa7bb5a4d1f1bab8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 1459}
+    spritePosition: {x: 212, y: 1249}
+  - name: UiBtn_Calender
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 1673
+      width: 176
+      height: 177
+    spriteID: c30de393a552e344f8da96b08fb1da7d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 1673}
+    spritePosition: {x: 0, y: 1249}
+  - name: UiBtn_ChatSelected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 1635
+      width: 168
+      height: 168
+    spriteID: 7181e6d197703044a9175166ae80fc98
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 1635}
+    spritePosition: {x: 212, y: 1042}
+  - name: UiBtn_Chat
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 1858
+      width: 176
+      height: 177
+    spriteID: 7a7b119b1fe031841b6b161869d739cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 1858}
+    spritePosition: {x: 0, y: 1037}
+  - name: UiBtn_CircleNormal
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 748
+      width: 177
+      height: 177
+    spriteID: 9a5af2d0663472c4f8f44dccc298f3be
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 748}
+    spritePosition: {x: 416, y: 1867}
+  - name: UiBtn_CirclePressed
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 933
+      width: 177
+      height: 177
+    spriteID: 1a9b447c603b99d46ad11e2c7e0f193b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 933}
+    spritePosition: {x: 416, y: 1668}
+  - name: UiBtn_CircleDeactvated
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 1118
+      width: 177
+      height: 177
+    spriteID: e7c140534df932a4c83cd556c9180f12
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 1118}
+    spritePosition: {x: 416, y: 1462}
+  - name: UiIcon_Room
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 1429
+      width: 75
+      height: 70
+    spriteID: f7c4cd846730f964aa862afb7b120eea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 1429}
+    spritePosition: {x: 258, y: 715}
+  - name: UiIcon_ClockEvent
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 1347
+      width: 74
+      height: 74
+    spriteID: 926a1d1fb3b794d47a7d2b6175da2e48
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 1347}
+    spritePosition: {x: 260, y: 617}
+  - name: UiMask_EventParticipantsProfile
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 748
+      width: 120
+      height: 120
+    spriteID: e7c7b32e32e912e499f3614b25d844d4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 748}
+    spritePosition: {x: 235, y: 220}
+  - name: UiBtn_CalendarButtonWithEventandNews
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 810
+      y: 4
+      width: 208
+      height: 180
+    spriteID: 86733259e3b46c44cab3fe2f7cdc507a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 810, y: 4}
+    spritePosition: {x: 12, y: 190}
+  - name: UiIcon_RaiseHand
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 601
+      y: 1507
+      width: 60
+      height: 70
+    spriteID: c6f9918380c30764fa96ae8ddc5d6652
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 601, y: 1507}
+    spritePosition: {x: 668, y: 634}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  characterMode: 0
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers:
+  - name: UiBox_BottomMenu
+    spriteName: UiBox_BottomMenu
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8ec035506cfa5e64da5d2049aebc47eb
+    layerID: 320
+    mosaicPosition: {x: 4, y: 748}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CalendarButtonWithoutEvent
+    spriteName: UiBtn_CalendarButtonWithoutEvent
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7dbb2ca8202c9d5438e175aee2d1cdb7
+    layerID: 303
+    mosaicPosition: {x: 4, y: 1353}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CalendarButtonSelected
+    spriteName: UiBtn_CalendarButtonSelected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ab85ec48314459a498851d8eb0f41a57
+    layerID: 304
+    mosaicPosition: {x: 810, y: 392}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CalendarButtonWithoutEventSelected
+    spriteName: UiBtn_CalendarButtonWithoutEventSelected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fe9f6effd66062f4ebe515623803d708
+    layerID: 305
+    mosaicPosition: {x: 4, y: 977}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CalendarButtonWithEvent
+    spriteName: UiBtn_CalendarButtonWithEvent
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c3b56ca91c2728c4e843ab67d95f2c46
+    layerID: 306
+    mosaicPosition: {x: 4, y: 1165}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_FlatBlue
+    spriteName: UiBtn_FlatBlue
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5dca91c36d07b5544ab3aafed40dd780
+    layerID: 307
+    mosaicPosition: {x: 4, y: 1911}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_FlatRedOutline
+    spriteName: UiBtn_FlatRedOutline
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6a88f901924517d478e4133a3ff07fdd
+    layerID: 308
+    mosaicPosition: {x: 729, y: 748}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Visit
+    spriteName: UiIcon_Visit
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 05811a00c1b4f24428aac607d4d8227b
+    layerID: 309
+    mosaicPosition: {x: 529, y: 1887}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Medal2
+    spriteName: UiIcon_Medal2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fdc5a46ae8ca8664c8603467fcc37bd2
+    layerID: 341
+    mosaicPosition: {x: 601, y: 1010}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Medal1
+    spriteName: UiIcon_Medal1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f9c5e3f0ff58bef4b9b910d4c645e198
+    layerID: 342
+    mosaicPosition: {x: 601, y: 876}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Negative
+    spriteName: UiIcon_Negative
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e5e7969e9e9289e409c12f5252a94dde
+    layerID: 329
+    mosaicPosition: {x: 601, y: 1144}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Interact
+    spriteName: UiIcon_Interact
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f30028273539e354d98fbc15f4d69470
+    layerID: 311
+    mosaicPosition: {x: 417, y: 1811}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Edit
+    spriteName: UiIcon_Edit
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 612718f7eb64da64b8e3662d9050107b
+    layerID: 312
+    mosaicPosition: {x: 153, y: 1911}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_NormalBell
+    spriteName: UiIcon_NormalBell
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 48368d42f0c526a488f7b5bde1a0ae9a
+    layerID: 313
+    mosaicPosition: {x: 417, y: 1961}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_MuteBell
+    spriteName: UiIcon_MuteBell
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 61b77a60c426d4846b96d1884f1a5063
+    layerID: 314
+    mosaicPosition: {x: 529, y: 1811}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Triangle
+    spriteName: UiIcon_Triangle
+    isGroup: 0
+    parentIndex: -1
+    spriteID: faa66c902ba54ba4790016573169d2b8
+    layerID: 315
+    mosaicPosition: {x: 948, y: 711}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_ThumbsUp
+    spriteName: UiIcon_ThumbsUp
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cdda016609d028b468c3e35c181df848
+    layerID: 316
+    mosaicPosition: {x: 515, y: 1961}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_ClapHand
+    spriteName: UiIcon_ClapHand
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8779b7beab9016b4ca45e4c1edb36756
+    layerID: 317
+    mosaicPosition: {x: 601, y: 1246}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Config
+    spriteName: UiIcon_Config
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 73e0bf30c018bd446a23af05d0257a31
+    layerID: 318
+    mosaicPosition: {x: 948, y: 580}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Reactions
+    spriteName: UiIcon_Reactions
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6cb9c05166751f14eb4d0e965b20b1b3
+    layerID: 319
+    mosaicPosition: {x: 810, y: 580}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_Mic
+    spriteName: UiBtn_Mic
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0d608a0791e04a14fa8314f4ac9b27bc
+    layerID: 325
+    mosaicPosition: {x: 4, y: 1541}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_MicDeactivated
+    spriteName: UiBtn_MicDeactivated
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7e15d23b6767215419ddaa949ebbe948
+    layerID: 326
+    mosaicPosition: {x: 4, y: 1726}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBox_CardInfo
+    spriteName: UiBox_CardInfo
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 63a69403b0062dd4686969dde3ba9854
+    layerID: 322
+    mosaicPosition: {x: 810, y: 192}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Camada 35
+    spriteName: Camada 35
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9f4bff290034fdf40bff9d38f64cc5bf
+    layerID: 328
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_ClassSelected
+    spriteName: UiBtn_ClassSelected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d0dbb7585f3e98148b827adc6978dee0
+    layerID: 282
+    mosaicPosition: {x: 232, y: 1303}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_Class
+    spriteName: UiBtn_Class
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2473ae4ebf5c45f4d97ce1b37cc1bc6c
+    layerID: 281
+    mosaicPosition: {x: 417, y: 931}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_Profile
+    spriteName: UiBtn_Profile
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 74e72303209444c4783445c3dea829d4
+    layerID: 280
+    mosaicPosition: {x: 232, y: 1488}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_ProfileSelected
+    spriteName: UiBtn_ProfileSelected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c37e50f72e9c4484ba263671ee0b1b2c
+    layerID: 279
+    mosaicPosition: {x: 417, y: 1107}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_Map
+    spriteName: UiBtn_Map
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 757759828177b50479b86c8ca26bd0f4
+    layerID: 278
+    mosaicPosition: {x: 417, y: 748}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_MapSelected
+    spriteName: UiBtn_MapSelected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3b69ec390a76b024ea9e84a570e55918
+    layerID: 277
+    mosaicPosition: {x: 417, y: 1283}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CalendarSlected
+    spriteName: UiBtn_CalendarSlected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: abffe36056e1afb4691d3912bcbc22b4
+    layerID: 276
+    mosaicPosition: {x: 417, y: 1459}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_Calender
+    spriteName: UiBtn_Calender
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b3b7adc3170c20e42a8a006e8e5e31f8
+    layerID: 275
+    mosaicPosition: {x: 232, y: 1673}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_ChatSelected
+    spriteName: UiBtn_ChatSelected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 46ec28acc8103874b9ca3921433176b0
+    layerID: 274
+    mosaicPosition: {x: 417, y: 1635}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_Chat
+    spriteName: UiBtn_Chat
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 62955d0aa5fe10445ae73b1234f142d3
+    layerID: 273
+    mosaicPosition: {x: 232, y: 1858}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CircleNormal
+    spriteName: UiBtn_CircleNormal
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 02cce8cef3f19e949a23224a6d67b179
+    layerID: 272
+    mosaicPosition: {x: 232, y: 748}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CirclePressed
+    spriteName: UiBtn_CirclePressed
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d2c766343e946484ba0fe300aef5251b
+    layerID: 271
+    mosaicPosition: {x: 232, y: 933}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CircleDeactvated
+    spriteName: UiBtn_CircleDeactvated
+    isGroup: 0
+    parentIndex: -1
+    spriteID: aef46a833d3ae484ca7cbac0f0b86480
+    layerID: 270
+    mosaicPosition: {x: 232, y: 1118}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Room
+    spriteName: UiIcon_Room
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5ad281160620b3e40a2f4f7f3b304efd
+    layerID: 339
+    mosaicPosition: {x: 601, y: 1429}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_ClockEvent
+    spriteName: UiIcon_ClockEvent
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 28c03f5cd76dd614fbbe082125051f26
+    layerID: 347
+    mosaicPosition: {x: 601, y: 1347}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiMask_EventParticipantsProfile
+    spriteName: UiMask_EventParticipantsProfile
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 94cebd4d0f5e496449bbf37813b2443f
+    layerID: 345
+    mosaicPosition: {x: 601, y: 748}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CalendarButtonWithEventandNews
+    spriteName: UiBtn_CalendarButtonWithEventandNews
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1f2c7fcad10888442abc4a8af36e03ae
+    layerID: 344
+    mosaicPosition: {x: 810, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_RaiseHand
+    spriteName: UiIcon_RaiseHand
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e960b303291acf443825ef73d3c48c73
+    layerID: 340
+    mosaicPosition: {x: 601, y: 1507}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  rigPSDLayers:
+  - name: UiBox_BottomMenu
+    spriteName: UiBox_BottomMenu
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9879f0e8a09f90e438e7904ef3908cbd
+    layerID: 320
+    mosaicPosition: {x: 4, y: 748}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CalendarButtonWithoutEvent
+    spriteName: UiBtn_CalendarButtonWithoutEvent
+    isGroup: 0
+    parentIndex: -1
+    spriteID: dd34fabc1bf65454d8107d3286cfb814
+    layerID: 303
+    mosaicPosition: {x: 4, y: 1353}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CalendarButtonSelected
+    spriteName: UiBtn_CalendarButtonSelected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8ce2026d9935408469247d3517bc12b3
+    layerID: 304
+    mosaicPosition: {x: 810, y: 392}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CalendarButtonWithoutEventSelected
+    spriteName: UiBtn_CalendarButtonWithoutEventSelected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7a1a7dd2bd03bd74791b27377734ff4b
+    layerID: 305
+    mosaicPosition: {x: 4, y: 977}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CalendarButtonWithEvent
+    spriteName: UiBtn_CalendarButtonWithEvent
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 25ef5754604ccf440a7d09accf222758
+    layerID: 306
+    mosaicPosition: {x: 4, y: 1165}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_FlatBlue
+    spriteName: UiBtn_FlatBlue
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b3f3e7bc60e17b9488edff453eb16bb9
+    layerID: 307
+    mosaicPosition: {x: 4, y: 1911}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_FlatRedOutline
+    spriteName: UiBtn_FlatRedOutline
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 071d37bc5f2ab594f8970721427f460e
+    layerID: 308
+    mosaicPosition: {x: 729, y: 748}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Visit
+    spriteName: UiIcon_Visit
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fc00c8f1825672e42a619cb2d591fd64
+    layerID: 309
+    mosaicPosition: {x: 529, y: 1887}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Medal2
+    spriteName: UiIcon_Medal2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a103d6af71f13a44ea2d50ede012d089
+    layerID: 341
+    mosaicPosition: {x: 601, y: 1010}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Medal1
+    spriteName: UiIcon_Medal1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e61ac66e545e40e498983f68d5bd9560
+    layerID: 342
+    mosaicPosition: {x: 601, y: 876}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Negative
+    spriteName: UiIcon_Negative
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a978c8667ecc9e44bbda71f9e7fddab2
+    layerID: 329
+    mosaicPosition: {x: 601, y: 1144}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Interact
+    spriteName: UiIcon_Interact
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d96b515c7d0b3684e88777ccebc00379
+    layerID: 311
+    mosaicPosition: {x: 417, y: 1811}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Edit
+    spriteName: UiIcon_Edit
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 41d4773d8e76ea043a673f0797a7edcd
+    layerID: 312
+    mosaicPosition: {x: 153, y: 1911}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_NormalBell
+    spriteName: UiIcon_NormalBell
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5e77fef57c15d1445a8bb79638ba28f9
+    layerID: 313
+    mosaicPosition: {x: 417, y: 1961}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_MuteBell
+    spriteName: UiIcon_MuteBell
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0ca84b28b9ffd704cb2d375ccd02492f
+    layerID: 314
+    mosaicPosition: {x: 529, y: 1811}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Triangle
+    spriteName: UiIcon_Triangle
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4bf95b9ccaf3d8445954700404fcd721
+    layerID: 315
+    mosaicPosition: {x: 948, y: 711}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_ThumbsUp
+    spriteName: UiIcon_ThumbsUp
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9be50e3cc1d2c6142887369d2b06bc84
+    layerID: 316
+    mosaicPosition: {x: 515, y: 1961}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_ClapHand
+    spriteName: UiIcon_ClapHand
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6eec465e69069e24489b958b27fb6e95
+    layerID: 317
+    mosaicPosition: {x: 601, y: 1246}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Config
+    spriteName: UiIcon_Config
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a42bcb20aacf013469920ecc8cd33c23
+    layerID: 318
+    mosaicPosition: {x: 948, y: 580}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Reactions
+    spriteName: UiIcon_Reactions
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ff34b0b7f766bd84fa98aa6aba3ecc69
+    layerID: 319
+    mosaicPosition: {x: 810, y: 580}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_Mic
+    spriteName: UiBtn_Mic
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b4864e0c2edd7d343b105a9068cdcadb
+    layerID: 325
+    mosaicPosition: {x: 4, y: 1541}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_MicDeactivated
+    spriteName: UiBtn_MicDeactivated
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4aa8e206a520f1e49af483f23d7430da
+    layerID: 326
+    mosaicPosition: {x: 4, y: 1726}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBox_CardInfo
+    spriteName: UiBox_CardInfo
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3435acf651154224a84b6be1864376cb
+    layerID: 322
+    mosaicPosition: {x: 810, y: 192}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Camada 35
+    spriteName: Camada 35
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2c97022094638a742b26028b0dec0169
+    layerID: 328
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_ClassSelected
+    spriteName: UiBtn_ClassSelected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b5835241dc1da904ea88e693be646b51
+    layerID: 282
+    mosaicPosition: {x: 232, y: 1303}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_Class
+    spriteName: UiBtn_Class
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c545f4ef89d4e7a47a7c8e4555463a26
+    layerID: 281
+    mosaicPosition: {x: 417, y: 931}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_Profile
+    spriteName: UiBtn_Profile
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 973ce3241a030484e86bbd9d13e07761
+    layerID: 280
+    mosaicPosition: {x: 232, y: 1488}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_ProfileSelected
+    spriteName: UiBtn_ProfileSelected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d6b8d35c79d7dfc49a57c62cf90af078
+    layerID: 279
+    mosaicPosition: {x: 417, y: 1107}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_Map
+    spriteName: UiBtn_Map
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 660e7aec0f366a447bb3e3e0c4205540
+    layerID: 278
+    mosaicPosition: {x: 417, y: 748}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_MapSelected
+    spriteName: UiBtn_MapSelected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 11114b51ad7e2f645bf5cdb8775cd8ce
+    layerID: 277
+    mosaicPosition: {x: 417, y: 1283}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CalendarSlected
+    spriteName: UiBtn_CalendarSlected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ee57630925cb1ba4fa7bb5a4d1f1bab8
+    layerID: 276
+    mosaicPosition: {x: 417, y: 1459}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_Calender
+    spriteName: UiBtn_Calender
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c30de393a552e344f8da96b08fb1da7d
+    layerID: 275
+    mosaicPosition: {x: 232, y: 1673}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_ChatSelected
+    spriteName: UiBtn_ChatSelected
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7181e6d197703044a9175166ae80fc98
+    layerID: 274
+    mosaicPosition: {x: 417, y: 1635}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_Chat
+    spriteName: UiBtn_Chat
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7a7b119b1fe031841b6b161869d739cf
+    layerID: 273
+    mosaicPosition: {x: 232, y: 1858}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CircleNormal
+    spriteName: UiBtn_CircleNormal
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9a5af2d0663472c4f8f44dccc298f3be
+    layerID: 272
+    mosaicPosition: {x: 232, y: 748}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CirclePressed
+    spriteName: UiBtn_CirclePressed
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1a9b447c603b99d46ad11e2c7e0f193b
+    layerID: 271
+    mosaicPosition: {x: 232, y: 933}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CircleDeactvated
+    spriteName: UiBtn_CircleDeactvated
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e7c140534df932a4c83cd556c9180f12
+    layerID: 270
+    mosaicPosition: {x: 232, y: 1118}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_Room
+    spriteName: UiIcon_Room
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f7c4cd846730f964aa862afb7b120eea
+    layerID: 339
+    mosaicPosition: {x: 601, y: 1429}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_ClockEvent
+    spriteName: UiIcon_ClockEvent
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 926a1d1fb3b794d47a7d2b6175da2e48
+    layerID: 347
+    mosaicPosition: {x: 601, y: 1347}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiMask_EventParticipantsProfile
+    spriteName: UiMask_EventParticipantsProfile
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e7c7b32e32e912e499f3614b25d844d4
+    layerID: 345
+    mosaicPosition: {x: 601, y: 748}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiBtn_CalendarButtonWithEventandNews
+    spriteName: UiBtn_CalendarButtonWithEventandNews
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 86733259e3b46c44cab3fe2f7cdc507a
+    layerID: 344
+    mosaicPosition: {x: 810, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: UiIcon_RaiseHand
+    spriteName: UiIcon_RaiseHand
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c6f9918380c30764fa96ae8ddc5d6652
+    layerID: 340
+    mosaicPosition: {x: 601, y: 1507}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []
