@@ -1,0 +1,8 @@
+{
+  "name": "code-review",
+  "description": "Assistente de code review. Auxilia com revisão de PRs, identificação de bugs, code smells, security review, performance analysis, e best practices.",
+  "version": "1.0.0",
+  "author": "Bugaboo Studio",
+  "tags": ["code-review", "quality", "security", "best-practices", "refactoring"],
+  "type": "user"
+}
