@@ -1,0 +1,8 @@
+{
+  "name": "performance",
+  "description": "Assistente de otimização de performance. Auxilia com profiling, CPU/GPU optimization, memory management, mobile/WebGL optimization, e build size reduction.",
+  "version": "1.0.0",
+  "author": "Bugaboo Studio",
+  "tags": ["performance", "optimization", "profiling", "mobile", "webgl", "memory"],
+  "type": "user"
+}

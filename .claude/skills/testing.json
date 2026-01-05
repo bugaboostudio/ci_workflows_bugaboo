@@ -1,0 +1,8 @@
+{
+  "name": "testing",
+  "description": "Assistente de testes para Unity. Auxilia com TDD, unit tests, integration tests, NUnit, code coverage, mocking, e CI/CD test automation.",
+  "version": "1.0.0",
+  "author": "Bugaboo Studio",
+  "tags": ["testing", "tdd", "nunit", "unit-tests", "integration-tests", "quality"],
+  "type": "user"
+}

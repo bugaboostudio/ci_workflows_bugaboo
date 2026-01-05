@@ -1,0 +1,8 @@
+{
+  "name": "unity-dev",
+  "description": "Assistente de desenvolvimento Unity 3D. Auxilia com C# scripting, MonoBehaviour lifecycle, performance optimization, patterns, Ready Player Me, e cross-platform development.",
+  "version": "1.0.0",
+  "author": "Bugaboo Studio",
+  "tags": ["unity", "c#", "gamedev", "performance", "ready-player-me", "scripting"],
+  "type": "user"
+}
