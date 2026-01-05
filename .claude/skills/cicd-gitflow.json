@@ -1,0 +1,8 @@
+{
+  "name": "cicd-gitflow",
+  "description": "Assistente de CI/CD e GitFlow para projetos Unity. Auxilia com branching, conventional commits, workflows GitHub Actions, versionamento semântico e otimização de builds.",
+  "version": "1.0.0",
+  "author": "Bugaboo Studio",
+  "tags": ["ci-cd", "gitflow", "unity", "github-actions", "gameCI", "git", "workflow"],
+  "type": "user"
+}
