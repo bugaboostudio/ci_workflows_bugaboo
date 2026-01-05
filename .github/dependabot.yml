@@ -1,0 +1,42 @@
+# Dependabot configuration for automatic dependency updates
+# Documentation: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates
+
+version: 2
+updates:
+  # Manter GitHub Actions atualizadas
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    labels:
+      - "dependencies"
+      - "github-actions"
+      - "automated"
+    reviewers:
+      - "bugaboostudio/developers"
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore"
+      include: "scope"
+    # Limitar número de PRs abertos simultaneamente
+    open-pull-requests-limit: 5
+    # Agrupar minor e patch updates
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # TODO: Adicionar quando Unity Package Manager suportar Dependabot
+  # Atualmente Unity packages são gerenciados via manifest.json manualmente
+  # - package-ecosystem: "npm" # Unity usa formato similar ao npm
+  #   directory: "/Packages"
+  #   schedule:
+  #     interval: "weekly"
+  #   labels:
+  #     - "dependencies"
+  #     - "unity-packages"
