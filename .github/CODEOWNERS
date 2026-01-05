@@ -1,0 +1,56 @@
+# Code Owners for Bugaboo Studio Unity Template
+# Documentation: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything in the repo
+# Estes serão solicitados para review em todos os PRs
+*       @bugaboostudio/developers
+
+# GitHub Actions workflows - DevOps team
+/.github/workflows/    @bugaboostudio/devops
+/.github/dependabot.yml    @bugaboostudio/devops
+/.github/CODEOWNERS    @bugaboostudio/devops
+
+# Documentation - Tech leads e developers
+/*.md    @bugaboostudio/tech-leads
+/CLAUDE.md    @bugaboostudio/tech-leads
+/CHANGELOG.md    @bugaboostudio/tech-leads
+/CONTRIBUTING.md    @bugaboostudio/tech-leads
+
+# Unity Project Settings - Tech leads
+/ProjectSettings/    @bugaboostudio/tech-leads
+
+# Unity Packages - Tech leads (controle de dependências)
+/Packages/    @bugaboostudio/tech-leads
+/Packages/manifest.json    @bugaboostudio/tech-leads
+
+# Scripts C# - Developers
+/Assets/Scripts/    @bugaboostudio/developers
+/Assets/Editor/    @bugaboostudio/developers
+
+# Configuration files - Tech leads
+/Assets/Config*    @bugaboostudio/tech-leads
+/.gitignore    @bugaboostudio/tech-leads
+/.vscode/    @bugaboostudio/tech-leads
+
+# Assets de arte - Art team (adicionar quando team existir)
+# /Assets/Models/    @bugaboostudio/art-team
+# /Assets/Animations/    @bugaboostudio/art-team
+# /Assets/Materials/    @bugaboostudio/art-team
+# /Assets/Textures/    @bugaboostudio/art-team
+
+# Audio - Audio team (adicionar quando team existir)
+# /Assets/Audio/    @bugaboostudio/audio-team
+
+# Scenes - Level designers ou developers
+/Assets/Scenes/    @bugaboostudio/developers
+
+# Prefabs - Developers
+/Assets/Prefabs/    @bugaboostudio/developers
+
+# UI - UI/UX team (adicionar quando team existir)
+# /Assets/UI/    @bugaboostudio/ui-team
+
+# NOTA: Ajuste os teams acima conforme a estrutura da organização
+# Para criar teams: GitHub Organization > Teams > New team
+# Se não tiver teams, pode usar usernames individuais:
+# Exemplo: /Assets/Scripts/    @tiagousername @outrousername
