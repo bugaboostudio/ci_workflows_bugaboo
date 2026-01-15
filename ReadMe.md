@@ -1,9 +1,11 @@
 # Unity CI/CD Template - Bugaboo Studio 🎮
 
+**Versão:** 1.0.1
+
 [![GameCI](https://img.shields.io/badge/GameCI-Enabled-blue)](https://game.ci/)
 [![Unity](https://img.shields.io/badge/Unity-2022.3+-black)](https://unity.com/)
 [![License](https://img.shields.io/badge/License-Internal-green)](LICENSE)
-[![Template Version](https://img.shields.io/badge/Template-v1.0.0-orange)](CHANGELOG.md)
+[![Template Version](https://img.shields.io/badge/Template-v1.0.1-orange)](CHANGELOG.md)
 [![GitFlow](https://img.shields.io/badge/GitFlow-Enabled-brightgreen)](CLAUDE.md#gitflow-workflow-template-best-practices)
 [![CI Status](https://img.shields.io/badge/CI-passing-success)](../../actions)
 [![Security](https://img.shields.io/badge/Security-Policy-red)](SECURITY.md)
@@ -253,7 +255,7 @@ Use este checklist ao configurar um novo projeto a partir deste template:
 
 ## 🏷️ Versões
 
-- **Template Version**: 1.0.0 ([Changelog](CHANGELOG.md))
+- **Template Version**: 1.0.1 ([Changelog](CHANGELOG.md))
 - **Unity Version**: 2022.3+ (LTS recomendado)
 - **GameCI Actions**: Latest
 
