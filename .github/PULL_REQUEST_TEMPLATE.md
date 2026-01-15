@@ -17,6 +17,17 @@ Marque as opções relevantes:
 - [ ] 🔧 Chore (mudanças em build process, dependências, etc.)
 - [ ] 🔒 Segurança (correção de vulnerabilidade)
 
+## 🌿 GitFlow
+
+<!-- Verifique se está seguindo GitFlow corretamente -->
+- [ ] Branch de origem está correta:
+  - `feature/*` ou `bugfix/*` → `develop`
+  - `release/*` → `main` E `develop`
+  - `hotfix/*` → `main` E `develop`
+- [ ] Nome da branch segue convenção GitFlow
+- [ ] Branch está atualizada com a base (develop ou main)
+- [ ] Commits seguem Conventional Commits (feat, fix, docs, etc.)
+
 ## 🔗 Issues Relacionadas
 
 <!-- Link para issues usando: Closes #123, Fixes #456, Relates to #789 -->

@@ -1,0 +1,285 @@
+name: PR Validation 🔍
+
+# Este workflow valida PRs automaticamente
+# - Verifica convenções de commits
+# - Valida branch naming (GitFlow)
+# - Roda testes rápidos
+# - Verifica documentação
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  # ==============================================================================
+  # VALIDAÇÃO DE GITFLOW
+  # ==============================================================================
+  validate-gitflow:
+    name: Validate GitFlow Branch 🌿
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch name
+        run: |
+          BRANCH_NAME="${{ github.head_ref }}"
+          echo "Branch name: $BRANCH_NAME"
+          
+          # Validar naming convention
+          if [[ $BRANCH_NAME =~ ^(feature|bugfix|hotfix|release)/.+ ]]; then
+            echo "✅ Branch name follows GitFlow convention"
+          else
+            echo "❌ Branch name must follow GitFlow pattern:"
+            echo "   - feature/*  (para novas features)"
+            echo "   - bugfix/*   (para correções)"
+            echo "   - hotfix/*   (para correções críticas de produção)"
+            echo "   - release/*  (para preparação de release)"
+            exit 1
+          fi
+      
+      - name: Validate target branch
+        run: |
+          SOURCE_BRANCH="${{ github.head_ref }}"
+          TARGET_BRANCH="${{ github.base_ref }}"
+          
+          echo "Source: $SOURCE_BRANCH → Target: $TARGET_BRANCH"
+          
+          # Validar fluxo correto
+          if [[ $SOURCE_BRANCH =~ ^(feature|bugfix)/ ]]; then
+            if [[ $TARGET_BRANCH != "develop" ]]; then
+              echo "❌ feature/* e bugfix/* devem ter merge para develop"
+              exit 1
+            fi
+          elif [[ $SOURCE_BRANCH =~ ^release/ ]]; then
+            if [[ $TARGET_BRANCH != "main" && $TARGET_BRANCH != "develop" ]]; then
+              echo "❌ release/* deve ter merge para main ou develop"
+              exit 1
+            fi
+          elif [[ $SOURCE_BRANCH =~ ^hotfix/ ]]; then
+            if [[ $TARGET_BRANCH != "main" && $TARGET_BRANCH != "develop" ]]; then
+              echo "❌ hotfix/* deve ter merge para main ou develop"
+              exit 1
+            fi
+          fi
+          
+          echo "✅ Target branch is correct for this branch type"
+
+  # ==============================================================================
+  # VALIDAÇÃO DE COMMITS
+  # ==============================================================================
+  validate-commits:
+    name: Validate Commit Messages 📝
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Check commit messages
+        run: |
+          echo "Validating commits follow Conventional Commits..."
+          
+          # Get commits in this PR
+          COMMITS=$(git log --format=%s origin/${{ github.base_ref }}..${{ github.head_ref }})
+          
+          INVALID_COMMITS=()
+          while IFS= read -r commit; do
+            # Check if commit follows pattern: type(scope): message
+            # Types: feat, fix, docs, style, refactor, test, chore, perf, ci
+            if [[ ! $commit =~ ^(feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert)(\(.+\))?:.+ ]]; then
+              INVALID_COMMITS+=("$commit")
+            fi
+          done <<< "$COMMITS"
+          
+          if [ ${#INVALID_COMMITS[@]} -gt 0 ]; then
+            echo "❌ The following commits don't follow Conventional Commits:"
+            printf '%s\n' "${INVALID_COMMITS[@]}"
+            echo ""
+            echo "Formato correto:"
+            echo "  tipo(escopo): descrição"
+            echo ""
+            echo "Tipos válidos: feat, fix, docs, style, refactor, test, chore, perf, ci"
+            echo ""
+            echo "Exemplos:"
+            echo "  feat(player): adiciona sistema de inventário"
+            echo "  fix(ui): corrige bug de menu pausado"
+            echo "  docs: atualiza README com instruções"
+            exit 1
+          fi
+          
+          echo "✅ All commits follow Conventional Commits"
+
+  # ==============================================================================
+  # TESTES RÁPIDOS
+  # ==============================================================================
+  quick-tests:
+    name: Quick Tests ⚡
+    runs-on: ubuntu-latest
+    env:
+      UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          lfs: true
+
+      - name: Cache Unity Library
+        uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-quicktest-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-quicktest-
+            Library-
+
+      # Rodar apenas EditMode tests (mais rápido)
+      - name: Run EditMode tests
+        uses: game-ci/unity-test-runner@v2
+        with:
+          testMode: EditMode
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: Test results (EditMode)
+          path: artifacts/
+
+  # ==============================================================================
+  # VERIFICAÇÃO DE DOCUMENTAÇÃO
+  # ==============================================================================
+  check-documentation:
+    name: Check Documentation 📚
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check if documentation needs update
+        run: |
+          echo "Checking if significant changes require documentation updates..."
+          
+          # Check if changes include new features or breaking changes
+          if git diff --name-only origin/${{ github.base_ref }}...${{ github.head_ref }} | grep -qE "Assets/Scripts/|Packages/manifest.json"; then
+            echo "ℹ️ Changes detected in Scripts or Packages"
+            echo "Please ensure CLAUDE.md or ReadMe.md is updated if needed"
+          fi
+          
+          # Check if CHANGELOG.md was updated
+          if git diff --name-only origin/${{ github.base_ref }}...${{ github.head_ref }} | grep -q "CHANGELOG.md"; then
+            echo "✅ CHANGELOG.md was updated"
+          else
+            echo "⚠️ Consider updating CHANGELOG.md for this change"
+          fi
+
+  # ==============================================================================
+  # VERIFICAÇÃO DE ARQUIVOS
+  # ==============================================================================
+  check-files:
+    name: Check Files 📁
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check for debug or temp files
+        run: |
+          echo "Checking for debug/temp files that shouldn't be committed..."
+          
+          PROBLEMATIC_FILES=()
+          
+          # Check for common debug patterns
+          if git diff --name-only origin/${{ github.base_ref }}...${{ github.head_ref }} | grep -qE "\.log$|\.tmp$|Debug\.cs$"; then
+            PROBLEMATIC_FILES+=($(git diff --name-only origin/${{ github.base_ref }}...${{ github.head_ref }} | grep -E "\.log$|\.tmp$|Debug\.cs$"))
+          fi
+          
+          if [ ${#PROBLEMATIC_FILES[@]} -gt 0 ]; then
+            echo "⚠️ The following files might be debug/temp files:"
+            printf '%s\n' "${PROBLEMATIC_FILES[@]}"
+            echo "Please verify these files should be committed"
+          else
+            echo "✅ No obvious debug/temp files detected"
+          fi
+
+      - name: Check for large files
+        run: |
+          echo "Checking for large files (>10MB)..."
+          
+          LARGE_FILES=$(git diff --name-only origin/${{ github.base_ref }}...${{ github.head_ref }} | \
+            xargs -I{} sh -c 'if [ -f "{}" ]; then stat -f%z "{}"; fi' 2>/dev/null | \
+            awk '$1 > 10485760')
+          
+          if [ ! -z "$LARGE_FILES" ]; then
+            echo "⚠️ Large files detected (>10MB)"
+            echo "Consider using Git LFS for large assets"
+          else
+            echo "✅ No excessively large files detected"
+          fi
+
+  # ==============================================================================
+  # RESUMO
+  # ==============================================================================
+  pr-validation-summary:
+    name: PR Validation Summary ✅
+    needs: [validate-gitflow, validate-commits, quick-tests, check-documentation, check-files]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Check validation results
+        run: |
+          if [ "${{ needs.validate-gitflow.result }}" == "success" ] && \
+             [ "${{ needs.validate-commits.result }}" == "success" ] && \
+             [ "${{ needs.quick-tests.result }}" == "success" ]; then
+            echo "✅ All validations passed!"
+            echo "PR is ready for review"
+          else
+            echo "❌ Some validations failed"
+            echo "Please fix the issues above before requesting review"
+            exit 1
+          fi
+
+      - name: Comment on PR
+        uses: actions/github-script@v6
+        if: always()
+        with:
+          script: |
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            
+            const botComment = comments.find(comment => {
+              return comment.user.type === 'Bot' && comment.body.includes('PR Validation Results');
+            });
+            
+            const output = `## PR Validation Results 🤖
+            
+            | Check | Status |
+            |-------|--------|
+            | GitFlow Branch | ${{ needs.validate-gitflow.result == 'success' && '✅' || '❌' }} |
+            | Commit Messages | ${{ needs.validate-commits.result == 'success' && '✅' || '❌' }} |
+            | Quick Tests | ${{ needs.quick-tests.result == 'success' && '✅' || '❌' }} |
+            | Documentation | ${{ needs.check-documentation.result == 'success' && '✅' || '⚠️' }} |
+            | Files Check | ${{ needs.check-files.result == 'success' && '✅' || '⚠️' }} |
+            
+            ${{ needs.validate-gitflow.result == 'success' && needs.validate-commits.result == 'success' && needs.quick-tests.result == 'success' && '✅ **All critical validations passed!** PR is ready for review.' || '❌ **Some validations failed.** Please check the details above.' }}
+            
+            ---
+            *Automated validation by GitHub Actions*
+            `;
+            
+            if (botComment) {
+              github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: output
+              });
+            } else {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: output
+              });
+            }

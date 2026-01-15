@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 Documentação
+    url: https://github.com/bugaboostudio/ci_workflows_bugaboo/blob/main/CLAUDE.md
+    about: Consulte a documentação completa do projeto
+  - name: 💬 Discussões
+    url: https://github.com/bugaboostudio/ci_workflows_bugaboo/discussions
+    about: Faça perguntas ou discuta ideias com a comunidade
+  - name: 🎮 GameCI Documentation
+    url: https://game.ci/docs
+    about: Documentação oficial do GameCI
