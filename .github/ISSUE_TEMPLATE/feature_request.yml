@@ -1,0 +1,99 @@
+name: ✨ Feature Request
+description: Sugerir uma nova funcionalidade ou melhoria
+title: "[FEATURE]: "
+labels: ["enhancement", "triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por sugerir uma melhoria! Por favor, descreva sua ideia abaixo.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema ou Necessidade
+      description: Qual problema esta feature resolve? Ou qual necessidade atende?
+      placeholder: "Ex: Seria útil ter um sistema de... porque..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solução Proposta
+      description: Como você imagina que esta feature funcionaria?
+      placeholder: Descreva detalhadamente sua ideia
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas Consideradas
+      description: Você considerou outras soluções ou workarounds?
+      placeholder: Descreva alternativas que você já tentou ou considerou
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Categoria
+      description: Qual área do projeto esta feature afeta?
+      options:
+        - Gameplay
+        - UI/UX
+        - Networking
+        - Performance
+        - CI/CD
+        - Tooling/Editor
+        - Assets/Content
+        - Documentation
+        - Outro
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Prioridade (sua perspectiva)
+      description: Quão importante é esta feature para você?
+      options:
+        - Crítica - Bloqueador para progresso
+        - Alta - Muito importante
+        - Média - Importante mas não urgente
+        - Baixa - Nice to have
+    validations:
+      required: true
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: Mockups/Exemplos
+      description: Adicione screenshots, diagramas, ou exemplos visuais se aplicável
+      placeholder: Cole imagens ou links aqui
+
+  - type: textarea
+    id: technical
+    attributes:
+      label: Considerações Técnicas
+      description: Há alguma consideração técnica que você gostaria de mencionar?
+      placeholder: "Ex: Requer integração com SDK X, compatibilidade com plataforma Y..."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Busquei por feature requests similares antes de criar este
+          required: true
+        - label: Esta feature está alinhada com os objetivos do projeto
+          required: false
+        - label: Estou disposto a contribuir com a implementação
+          required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Informações Adicionais
+      description: Qualquer outra informação relevante

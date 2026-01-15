@@ -1,0 +1,214 @@
+name: Develop CI 🔄
+
+# Este workflow roda automaticamente quando há pushes para develop
+# - Testes completos (EditMode + PlayMode)
+# - Build de uma plataforma para validação rápida
+# - Validação de código (opcional: ReSharper)
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:  # Permite execução manual
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+jobs:
+  # ==============================================================================
+  # VERIFICAÇÃO DE LICENSE
+  # ==============================================================================
+  check-license:
+    name: Check Unity License 🔑
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify Unity license exists
+        run: |
+          if [[ ! "$UNITY_LICENSE" =~ ^\<.+ ]]; then
+            echo "❌ Unity license not configured or invalid"
+            echo "Please run the activation workflow first"
+            exit 1
+          fi
+          echo "✅ Unity license is configured"
+
+  # ==============================================================================
+  # TESTES COMPLETOS
+  # ==============================================================================
+  run-tests:
+    needs: check-license
+    name: Run Tests - ${{ matrix.testMode }} 🧪
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        testMode:
+          - EditMode
+          - PlayMode
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+
+      - name: Cache Unity Library
+        uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-develop-test-${{ matrix.testMode }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-develop-test-${{ matrix.testMode }}-
+            Library-develop-test-
+            Library-
+
+      - name: Run ${{ matrix.testMode }} tests
+        uses: game-ci/unity-test-runner@v2
+        id: testRunner
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          testMode: ${{ matrix.testMode }}
+          checkName: ${{ matrix.testMode }} Test Results
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport'
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: Test results - ${{ matrix.testMode }}
+          path: ${{ steps.testRunner.outputs.artifactsPath }}
+          retention-days: 7
+
+      - name: Upload coverage results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: Coverage results - ${{ matrix.testMode }}
+          path: ${{ steps.testRunner.outputs.coveragePath }}
+          retention-days: 7
+
+  # ==============================================================================
+  # BUILD DE VALIDAÇÃO (apenas uma plataforma)
+  # ==============================================================================
+  validation-build:
+    needs: run-tests
+    name: Validation Build - StandaloneLinux64 🏗️
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Cache Unity Library
+        uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-develop-build-StandaloneLinux64-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-develop-build-StandaloneLinux64-
+            Library-develop-build-
+            Library-
+
+      - name: Build project
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          targetPlatform: StandaloneLinux64
+          buildName: DevelopBuild
+          buildsPath: build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Develop Build - StandaloneLinux64
+          path: build/StandaloneLinux64
+          retention-days: 3  # Builds de develop não precisam ser mantidos por muito tempo
+
+  # ==============================================================================
+  # NOTIFICAÇÃO DE RESULTADOS
+  # ==============================================================================
+  notify-results:
+    needs: [check-license, run-tests, validation-build]
+    name: Notify Results 📢
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Check overall status
+        run: |
+          if [ "${{ needs.check-license.result }}" == "success" ] && \
+             [ "${{ needs.run-tests.result }}" == "success" ] && \
+             [ "${{ needs.validation-build.result }}" == "success" ]; then
+            echo "✅ Develop CI passed successfully!"
+            echo "STATUS=success" >> $GITHUB_ENV
+          else
+            echo "❌ Develop CI failed!"
+            echo "STATUS=failure" >> $GITHUB_ENV
+            exit 1
+          fi
+
+      - name: Create status badge
+        run: |
+          if [ "${{ env.STATUS }}" == "success" ]; then
+            echo "![Develop CI](https://img.shields.io/badge/develop%20CI-passing-brightgreen)" > status.md
+          else
+            echo "![Develop CI](https://img.shields.io/badge/develop%20CI-failing-red)" > status.md
+          fi
+
+      # Opcional: adicionar integração com Slack, Discord, etc.
+      # - name: Notify Slack
+      #   if: failure()
+      #   uses: slackapi/slack-github-action@v1
+      #   with:
+      #     payload: |
+      #       {
+      #         "text": "❌ Develop CI failed for ${{ github.repository }}",
+      #         "blocks": [
+      #           {
+      #             "type": "section",
+      #             "text": {
+      #               "type": "mrkdwn",
+      #               "text": "Commit: ${{ github.sha }}\nAuthor: ${{ github.actor }}"
+      #             }
+      #           }
+      #         ]
+      #       }
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  # ==============================================================================
+  # RESUMO
+  # ==============================================================================
+  ci-summary:
+    needs: [check-license, run-tests, validation-build]
+    name: CI Summary ✅
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Generate summary
+        run: |
+          echo "## Develop CI Summary 🔄" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Job | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-----|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| License Check | ${{ needs.check-license.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Tests | ${{ needs.run-tests.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Validation Build | ${{ needs.validation-build.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.check-license.result }}" == "success" ] && \
+             [ "${{ needs.run-tests.result }}" == "success" ] && \
+             [ "${{ needs.validation-build.result }}" == "success" ]; then
+            echo "### ✅ All checks passed!" >> $GITHUB_STEP_SUMMARY
+            echo "Develop branch is healthy and ready for features." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### ❌ Some checks failed!" >> $GITHUB_STEP_SUMMARY
+            echo "Please review the failed jobs above." >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit**: \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Author**: ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Triggered by**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY

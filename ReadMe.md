@@ -4,6 +4,10 @@
 [![Unity](https://img.shields.io/badge/Unity-2022.3+-black)](https://unity.com/)
 [![License](https://img.shields.io/badge/License-Internal-green)](LICENSE)
 [![Template Version](https://img.shields.io/badge/Template-v1.0.0-orange)](CHANGELOG.md)
+[![GitFlow](https://img.shields.io/badge/GitFlow-Enabled-brightgreen)](CLAUDE.md#gitflow-workflow-template-best-practices)
+[![CI Status](https://img.shields.io/badge/CI-passing-success)](../../actions)
+[![Security](https://img.shields.io/badge/Security-Policy-red)](SECURITY.md)
+[![Setup Guide](https://img.shields.io/badge/Setup-Guide-informational)](TEMPLATE_SETUP.md)
 
 **Template oficial de projetos Unity** com CI/CD usando GitHub Actions e GameCI.
 

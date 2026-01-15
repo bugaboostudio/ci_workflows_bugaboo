@@ -1,0 +1,122 @@
+name: 🐛 Bug Report
+description: Reportar um bug ou comportamento inesperado
+title: "[BUG]: "
+labels: ["bug", "triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por reportar um bug! Por favor, preencha as informações abaixo para nos ajudar a resolver o problema.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição do Bug
+      description: Descreva claramente o bug encontrado
+      placeholder: O que aconteceu? O que você esperava que acontecesse?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passos para Reproduzir
+      description: Como podemos reproduzir este bug?
+      placeholder: |
+        1. Abrir cena '...'
+        2. Clicar em '...'
+        3. Executar ação '...'
+        4. Ver erro
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento Esperado
+      description: O que você esperava que acontecesse?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportamento Atual
+      description: O que realmente aconteceu?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Plataforma
+      description: Em qual plataforma o bug ocorre?
+      multiple: true
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - iOS
+        - Android
+        - WebGL
+        - Editor Unity
+    validations:
+      required: true
+
+  - type: input
+    id: unity-version
+    attributes:
+      label: Versão Unity
+      description: Qual versão do Unity você está usando?
+      placeholder: "ex: 2022.3.15f1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs/Console Output
+      description: Cole aqui os logs relevantes (se houver)
+      render: shell
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots/Videos
+      description: Adicione screenshots ou videos se aplicável
+      placeholder: Cole imagens ou links aqui
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severidade
+      description: Qual o impacto deste bug?
+      options:
+        - Crítico - Impede uso do projeto
+        - Alto - Funcionalidade importante não funciona
+        - Médio - Funcionalidade funciona parcialmente
+        - Baixo - Problema menor ou cosmético
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Busquei por issues similares antes de criar esta
+          required: true
+        - label: Este bug acontece consistentemente
+          required: false
+        - label: Testei na versão mais recente do projeto
+          required: false
+        - label: Incluí todos os passos necessários para reproduzir
+          required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Informações Adicionais
+      description: Qualquer outra informação relevante
