@@ -1,5 +1,7 @@
 # Unity CI/CD Template - Bugaboo Studio 🎮
 
+**Versão:** 1.0.0
+
 [![GameCI](https://img.shields.io/badge/GameCI-Enabled-blue)](https://game.ci/)
 [![Unity](https://img.shields.io/badge/Unity-2022.3+-black)](https://unity.com/)
 [![License](https://img.shields.io/badge/License-Internal-green)](LICENSE)
