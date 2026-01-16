@@ -27,7 +27,7 @@ jobs:
     steps:
         #aqui é feito o checkout do código
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # - name: Create LFS file list
       #   run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
@@ -46,10 +46,10 @@ jobs:
       #     git reset --hard
 
       - name: Restore Library cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: Library
-          key: Library-test-project-${{ matrix.targetPlatform }}
+          key: Library-test-project-${{ matrix.testMode }}
           restore-keys: |
             Library-test-project-
             Library-
@@ -62,7 +62,7 @@ jobs:
           checkName: ${{ matrix.testMode }} test results
           githubToken: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: Test results (${{ matrix.testMode }})
           path: ${{ steps.testRunner.outputs.artifactsPath }}
@@ -81,11 +81,11 @@ jobs:
             - iOS # Build an iOS player.
             - Android # Build an Android player.    
     steps:
-          - uses: actions/checkout@v2
+          - uses: actions/checkout@v4
             with:
               fetch-depth: 0
               lfs: false
-          - uses: actions/cache@v2
+          - uses: actions/cache@v4
             with:
                       path: Library
                       key: Library-${{ matrix.targetPlatform }}
@@ -93,9 +93,9 @@ jobs:
           - uses: game-ci/unity-builder@v2
             env:
               UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-              with:
+            with:
               targetPlatform: ${{ matrix.targetPlatform }}
-          - uses: actions/upload-artifact@v2
+          - uses: actions/upload-artifact@v4
             with:
                       name: Build-${{ matrix.targetPlatform }}
                       path: build/${{ matrix.targetPlatform }}
@@ -106,11 +106,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
-          name: build-WebGL
+          name: Build-WebGL
           path: build
 
       - name: Deploy 🚀
