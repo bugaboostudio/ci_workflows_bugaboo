@@ -9,8 +9,19 @@ jobs:
    name: Self Test
    steps:
      - name: Checkout
-       uses: actions/checkout@v2
+       uses: actions/checkout@v4
+     - name: Locate solution file
+       id: find_solution
+       run: |
+         SOLUTION_PATH=$(find . -maxdepth 2 -name '*.sln' | head -n 1)
+         if [ -z "$SOLUTION_PATH" ]; then
+           echo "No .sln file found. Skipping ReSharper inspection."
+           echo "solution=" >> "$GITHUB_OUTPUT"
+         else
+           echo "solution=$SOLUTION_PATH" >> "$GITHUB_OUTPUT"
+         fi
      - name: Inspect
+       if: ${{ steps.find_solution.outputs.solution != '' }}
        uses: florius0/resharper-unity-ci
        with:
-          solution: './MyProject.sln'
+          solution: ${{ steps.find_solution.outputs.solution }}

@@ -1,15 +1,27 @@
 name: Create Unity Package
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      package_root:
+        description: "Folder within Assets to package (relative path)"
+        required: true
+        default: "Assets/Voiceer"
 
 jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - run: |
-        echo "Assets/Voiceer.meta" > metaList
-        find Assets/Voiceer/ -name \*.meta >> metaList
+    - uses: actions/checkout@v4
+    - name: Build meta list
+      run: |
+        PACKAGE_ROOT="${{ inputs.package_root }}"
+        if [ ! -d "$PACKAGE_ROOT" ]; then
+          echo "Package root '$PACKAGE_ROOT' not found. Update the workflow input."
+          exit 1
+        fi
+        echo "${PACKAGE_ROOT}.meta" > metaList
+        find "$PACKAGE_ROOT" -name \*.meta >> metaList
 
     - run: mkdir a
 
@@ -17,7 +29,7 @@ jobs:
       with:
         package-path: 'a/output.unitypackage'
         include-files: metaList
-    - uses: actions/upload-artifact@master
+    - uses: actions/upload-artifact@v4
       with:
         path: a
         name: package
