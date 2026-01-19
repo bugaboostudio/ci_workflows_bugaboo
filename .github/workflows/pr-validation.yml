@@ -124,7 +124,7 @@ jobs:
           lfs: true
 
       - name: Cache Unity Library
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
           path: Library
           key: Library-quicktest-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
