@@ -134,7 +134,7 @@ jobs:
 
       # Rodar apenas EditMode tests (mais rápido)
       - name: Run EditMode tests
-        uses: game-ci/unity-test-runner@v2
+        uses: game-ci/unity-test-runner@v4
         with:
           testMode: EditMode
           githubToken: ${{ secrets.GITHUB_TOKEN }}
