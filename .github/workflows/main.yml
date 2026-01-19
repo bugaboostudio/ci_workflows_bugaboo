@@ -46,7 +46,7 @@ jobs:
       #     git reset --hard
 
       - name: Restore Library cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: Library
           key: Library-test-project-${{ matrix.testMode }}
@@ -85,7 +85,7 @@ jobs:
             with:
               fetch-depth: 0
               lfs: false
-          - uses: actions/cache@v4
+          - uses: actions/cache@v5
             with:
                       path: Library
                       key: Library-${{ matrix.targetPlatform }}
